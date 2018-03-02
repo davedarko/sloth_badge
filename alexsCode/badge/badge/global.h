@@ -9,12 +9,15 @@
 #ifndef GLOBAL_H_
 #define GLOBAL_H_
 
+#include <stdint.h>
+
 typedef uint8_t byte;
 typedef uint8_t boolean;
 #define true 1
 #define false 0
 
 #define nop() asm volatile("nop")
+
 
 
 

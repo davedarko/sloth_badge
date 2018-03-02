@@ -134,6 +134,15 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="animation.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="animation.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="animationData.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="global.h">
       <SubType>compile</SubType>
     </Compile>

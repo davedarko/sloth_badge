@@ -7,17 +7,9 @@
 
 #include "LEDs.h"
 
-void leds_off()
-{
-	//DDRB &= ~(0b00011101);
-	PORTB &= ~(0b00011101);
-	DDRB=0;
-	//PORTB=0;
-}
 
-#define OUTMASK0 
 
-const __flash uint8_t portMasks [12][2]={
+const uint8_t __flash portMasks[12][2]={
 	{ (1 << PB0) | (1 << PB2), (1 << PB0) },	//1
 	{ (1 << PB0) | (1 << PB2), (1 << PB2) },	//2
 	{ (1 << PB2) | (1 << PB3), (1 << PB2) },	//3
@@ -32,16 +24,29 @@ const __flash uint8_t portMasks [12][2]={
 	{ (1 << PB0) | (1 << PB4), (1 << PB4) }		//12
 	};
 	
+	
+void leds_off()
+{
+	//DDRB &= ~(0b00011101);
+	PORTB &= ~(0b00011101);
+	DDRB=0;
+	//PORTB=0;
+}	
 
 void charlie (byte var) 
 {
 	//if (var>11) return;
 	leds_off();
+	nop();
 	//PORTB=0;
-	DDRB=portMasks[var][0];
-	PORTB|=portMasks[var][1];
+	if (var<12)
+	{
+		PORTB|=portMasks[var][1];
+		DDRB=portMasks[var][0];
+	}
 	nop();
 }
+
 
 /*
 // this is probably already at it's best

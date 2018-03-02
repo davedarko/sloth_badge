@@ -3,725 +3,666 @@ badge.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000304  00000000  00000000  00000094  2**1
+  0 .text         000003d6  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000002  00800060  00000304  00000398  2**0
+  1 .data         00000006  00800060  000003d6  0000046a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000004  00800062  00800062  0000039a  2**0
+  2 .bss          0000000c  00800066  00800066  00000470  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  0000039a  2**0
+  3 .comment      00000030  00000000  00000000  00000470  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000003cc  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004a0  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000080  00000000  00000000  00000408  2**0
+  5 .debug_aranges 00000098  00000000  00000000  000004dc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000009a7  00000000  00000000  00000488  2**0
+  6 .debug_info   0000086d  00000000  00000000  00000574  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000508  00000000  00000000  00000e2f  2**0
+  7 .debug_abbrev 000005bf  00000000  00000000  00000de1  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000004dc  00000000  00000000  00001337  2**0
+  8 .debug_line   00000618  00000000  00000000  000013a0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000134  00000000  00000000  00001814  2**2
+  9 .debug_frame  00000144  00000000  00000000  000019b8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000003b7  00000000  00000000  00001948  2**0
+ 10 .debug_str    000003d2  00000000  00000000  00001afc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000458  00000000  00000000  00001cff  2**0
+ 11 .debug_loc    000001e5  00000000  00000000  00001ece  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000060  00000000  00000000  00002157  2**0
+ 12 .debug_ranges 00000068  00000000  00000000  000020b3  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	21 c0       	rjmp	.+66     	; 0x44 <__ctors_end>
-   2:	51 c0       	rjmp	.+162    	; 0xa6 <__vector_1>
-   4:	38 c0       	rjmp	.+112    	; 0x76 <__bad_interrupt>
-   6:	37 c0       	rjmp	.+110    	; 0x76 <__bad_interrupt>
-   8:	36 c0       	rjmp	.+108    	; 0x76 <__bad_interrupt>
-   a:	35 c0       	rjmp	.+106    	; 0x76 <__bad_interrupt>
-   c:	34 c0       	rjmp	.+104    	; 0x76 <__bad_interrupt>
-   e:	33 c0       	rjmp	.+102    	; 0x76 <__bad_interrupt>
-  10:	32 c0       	rjmp	.+100    	; 0x76 <__bad_interrupt>
-  12:	31 c0       	rjmp	.+98     	; 0x76 <__bad_interrupt>
+   0:	35 c0       	rjmp	.+106    	; 0x6c <__ctors_end>
+   2:	95 c1       	rjmp	.+810    	; 0x32e <__vector_1>
+   4:	4c c0       	rjmp	.+152    	; 0x9e <__bad_interrupt>
+   6:	4b c0       	rjmp	.+150    	; 0x9e <__bad_interrupt>
+   8:	4a c0       	rjmp	.+148    	; 0x9e <__bad_interrupt>
+   a:	49 c0       	rjmp	.+146    	; 0x9e <__bad_interrupt>
+   c:	c3 c0       	rjmp	.+390    	; 0x194 <__vector_6>
+   e:	47 c0       	rjmp	.+142    	; 0x9e <__bad_interrupt>
+  10:	46 c0       	rjmp	.+140    	; 0x9e <__bad_interrupt>
+  12:	45 c0       	rjmp	.+138    	; 0x9e <__bad_interrupt>
+  14:	7b c0       	rjmp	.+246    	; 0x10c <animation_select+0x30>
+  16:	87 c0       	rjmp	.+270    	; 0x126 <animation_select+0x4a>
+  18:	93 c0       	rjmp	.+294    	; 0x140 <animation_select+0x64>
+  1a:	9f c0       	rjmp	.+318    	; 0x15a <animation_select+0x7e>
+  1c:	74 c0       	rjmp	.+232    	; 0x106 <animation_select+0x2a>
+  1e:	80 c0       	rjmp	.+256    	; 0x120 <animation_select+0x44>
+  20:	8c c0       	rjmp	.+280    	; 0x13a <animation_select+0x5e>
+  22:	98 c0       	rjmp	.+304    	; 0x154 <animation_select+0x78>
 
-00000014 <__trampolines_end>:
-  14:	05 01       	movw	r0, r10
-  16:	05 04       	cpc	r0, r5
-  18:	0c 04       	cpc	r0, r12
-  1a:	0c 08       	sbc	r0, r12
-  1c:	18 08       	sbc	r1, r8
-  1e:	18 10       	cpse	r1, r8
-  20:	09 01       	movw	r0, r18
-  22:	09 08       	sbc	r0, r9
-  24:	14 04       	cpc	r1, r4
-  26:	14 10       	cpse	r1, r4
-  28:	11 01       	movw	r2, r2
-  2a:	11 10       	cpse	r1, r1
+00000024 <__trampolines_end>:
+  24:	aa 0a       	sbc	r10, r26
+  26:	55 05       	cpc	r21, r5
 
-0000002c <two_apart>:
-  2c:	aa a0 55 50                                         ..UP
+00000028 <alexsTest>:
+  28:	01 00 02 00 04 00 08 00 10 00 20 00 40 00 80 00     .......... .@...
+  38:	00 01 00 02 00 04 00 08                             ........
 
-00000030 <updown>:
-  30:	20 00 50 00 88 00 04 10 02 20 01 40 00 80            .P...... .@..
+00000040 <updown>:
+  40:	20 00 50 00 88 00 04 01 02 02 01 04 00 08            .P...........
 
-0000003e <three_apart>:
-  3e:	92 40 49 20 24 90                                   .@I $.
+0000004e <three_apart>:
+  4e:	24 09 92 04 49 02                                   $...I.
 
-00000044 <__ctors_end>:
-  44:	11 24       	eor	r1, r1
-  46:	1f be       	out	0x3f, r1	; 63
-  48:	cf e9       	ldi	r28, 0x9F	; 159
-  4a:	cd bf       	out	0x3d, r28	; 61
+00000054 <portMasks>:
+  54:	05 01 05 04 0c 04 0c 08 18 08 18 10 09 01 09 08     ................
+  64:	14 04 14 10 11 01 11 10                             ........
 
-0000004c <__do_copy_data>:
-  4c:	10 e0       	ldi	r17, 0x00	; 0
-  4e:	a0 e6       	ldi	r26, 0x60	; 96
-  50:	b0 e0       	ldi	r27, 0x00	; 0
-  52:	e4 e0       	ldi	r30, 0x04	; 4
-  54:	f3 e0       	ldi	r31, 0x03	; 3
-  56:	02 c0       	rjmp	.+4      	; 0x5c <__do_copy_data+0x10>
-  58:	05 90       	lpm	r0, Z+
-  5a:	0d 92       	st	X+, r0
-  5c:	a2 36       	cpi	r26, 0x62	; 98
-  5e:	b1 07       	cpc	r27, r17
-  60:	d9 f7       	brne	.-10     	; 0x58 <__do_copy_data+0xc>
+0000006c <__ctors_end>:
+  6c:	11 24       	eor	r1, r1
+  6e:	1f be       	out	0x3f, r1	; 63
+  70:	cf e9       	ldi	r28, 0x9F	; 159
+  72:	cd bf       	out	0x3d, r28	; 61
 
-00000062 <__do_clear_bss>:
-  62:	20 e0       	ldi	r18, 0x00	; 0
-  64:	a2 e6       	ldi	r26, 0x62	; 98
-  66:	b0 e0       	ldi	r27, 0x00	; 0
-  68:	01 c0       	rjmp	.+2      	; 0x6c <.do_clear_bss_start>
+00000074 <__do_copy_data>:
+  74:	10 e0       	ldi	r17, 0x00	; 0
+  76:	a0 e6       	ldi	r26, 0x60	; 96
+  78:	b0 e0       	ldi	r27, 0x00	; 0
+  7a:	e6 ed       	ldi	r30, 0xD6	; 214
+  7c:	f3 e0       	ldi	r31, 0x03	; 3
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a6 36       	cpi	r26, 0x66	; 102
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
 
-0000006a <.do_clear_bss_loop>:
-  6a:	1d 92       	st	X+, r1
+0000008a <__do_clear_bss>:
+  8a:	20 e0       	ldi	r18, 0x00	; 0
+  8c:	a6 e6       	ldi	r26, 0x66	; 102
+  8e:	b0 e0       	ldi	r27, 0x00	; 0
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
 
-0000006c <.do_clear_bss_start>:
-  6c:	a6 36       	cpi	r26, 0x66	; 102
-  6e:	b2 07       	cpc	r27, r18
-  70:	e1 f7       	brne	.-8      	; 0x6a <.do_clear_bss_loop>
-  72:	0b d1       	rcall	.+534    	; 0x28a <main>
-  74:	45 c1       	rjmp	.+650    	; 0x300 <_exit>
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
 
-00000076 <__bad_interrupt>:
-  76:	c4 cf       	rjmp	.-120    	; 0x0 <__vectors>
+00000094 <.do_clear_bss_start>:
+  94:	a2 37       	cpi	r26, 0x72	; 114
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	7c d1       	rcall	.+760    	; 0x394 <main>
+  9c:	9a c1       	rjmp	.+820    	; 0x3d2 <_exit>
 
-00000078 <leds_off>:
-#include "LEDs.h"
+0000009e <__bad_interrupt>:
+  9e:	b0 cf       	rjmp	.-160    	; 0x0 <__vectors>
 
+000000a0 <animation_init>:
+volatile uint8_t sleep_flag=1;
+
+void animation_init(void)
+{
+	//init Timer
+	TCCR0A = (1<<WGM01);
+  a0:	82 e0       	ldi	r24, 0x02	; 2
+  a2:	8f bd       	out	0x2f, r24	; 47
+	TCCR0B = (1<<CS02)|(1<<CS00);
+  a4:	85 e0       	ldi	r24, 0x05	; 5
+  a6:	83 bf       	out	0x33, r24	; 51
+	TIMSK0 = (1<<OCIE0A);
+  a8:	84 e0       	ldi	r24, 0x04	; 4
+  aa:	89 bf       	out	0x39, r24	; 57
+	OCR0A = 1;
+  ac:	81 e0       	ldi	r24, 0x01	; 1
+  ae:	86 bf       	out	0x36, r24	; 54
+	
+	charlieBuffer=0xFFFF;//alexsTest[0];
+  b0:	2f ef       	ldi	r18, 0xFF	; 255
+  b2:	3f ef       	ldi	r19, 0xFF	; 255
+  b4:	30 93 6c 00 	sts	0x006C, r19	; 0x80006c <charlieBuffer+0x1>
+  b8:	20 93 6b 00 	sts	0x006B, r18	; 0x80006b <charlieBuffer>
+	charlieCOunt=0;
+  bc:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <charlieCOunt>
+	animationCounter=0;
+  c0:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <animationCounter>
+	animationCOunterMAX=alexsTestAnimation_length-1;
+  c4:	9b e0       	ldi	r25, 0x0B	; 11
+  c6:	90 93 6e 00 	sts	0x006E, r25	; 0x80006e <animationCOunterMAX>
+	animationData=&alexsTest[0];
+  ca:	28 e2       	ldi	r18, 0x28	; 40
+  cc:	30 e0       	ldi	r19, 0x00	; 0
+  ce:	30 93 71 00 	sts	0x0071, r19	; 0x800071 <animationData+0x1>
+  d2:	20 93 70 00 	sts	0x0070, r18	; 0x800070 <animationData>
+	leds_enabled=1;
+  d6:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <leds_enabled>
+  da:	08 95       	ret
+
+000000dc <animation_select>:
+	
+}
+
+void animation_select(uint8_t animationNum)
+{
+  dc:	cf 93       	push	r28
+  de:	c8 2f       	mov	r28, r24
+	leds_enabled=0; 
+  e0:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <leds_enabled>
+	leds_off();
+  e4:	04 d1       	rcall	.+520    	; 0x2ee <leds_off>
+	animationCounter=0;
+  e6:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <animationCounter>
+	charlieCOunt=0;
+  ea:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <charlieCOunt>
+	subDivMAX=subDivMAX_NORMAL;
+  ee:	82 e3       	ldi	r24, 0x32	; 50
+  f0:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subDivMAX>
+	
+	switch(animationNum)
+  f4:	8c 2f       	mov	r24, r28
+  f6:	90 e0       	ldi	r25, 0x00	; 0
+  f8:	88 30       	cpi	r24, 0x08	; 8
+  fa:	91 05       	cpc	r25, r1
+  fc:	b8 f5       	brcc	.+110    	; 0x16c <animation_select+0x90>
+  fe:	fc 01       	movw	r30, r24
+ 100:	e6 5f       	subi	r30, 0xF6	; 246
+ 102:	ff 4f       	sbci	r31, 0xFF	; 255
+ 104:	09 94       	ijmp
+	{
+		case 4: subDivMAX=subDivMAX_FAST;
+ 106:	89 e1       	ldi	r24, 0x19	; 25
+ 108:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subDivMAX>
+		case 0:	animationCOunterMAX=alexsTestAnimation_length;
+ 10c:	8c e0       	ldi	r24, 0x0C	; 12
+ 10e:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
+				animationData=&alexsTest[0];
+ 112:	88 e2       	ldi	r24, 0x28	; 40
+ 114:	90 e0       	ldi	r25, 0x00	; 0
+ 116:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
+ 11a:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
+				break;
+ 11e:	26 c0       	rjmp	.+76     	; 0x16c <animation_select+0x90>
+		case 5: subDivMAX=subDivMAX_FAST;
+ 120:	89 e1       	ldi	r24, 0x19	; 25
+ 122:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subDivMAX>
+		case 1: animationCOunterMAX=updown_length;
+ 126:	87 e0       	ldi	r24, 0x07	; 7
+ 128:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
+				animationData=&updown[0];
+ 12c:	80 e4       	ldi	r24, 0x40	; 64
+ 12e:	90 e0       	ldi	r25, 0x00	; 0
+ 130:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
+ 134:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
+				break;
+ 138:	19 c0       	rjmp	.+50     	; 0x16c <animation_select+0x90>
+		case 6: subDivMAX=subDivMAX_FAST;
+ 13a:	89 e1       	ldi	r24, 0x19	; 25
+ 13c:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subDivMAX>
+		case 2:	animationCOunterMAX=three_apart_length;
+ 140:	83 e0       	ldi	r24, 0x03	; 3
+ 142:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
+				animationData=&three_apart[0];
+ 146:	8e e4       	ldi	r24, 0x4E	; 78
+ 148:	90 e0       	ldi	r25, 0x00	; 0
+ 14a:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
+ 14e:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
+				break;
+ 152:	0c c0       	rjmp	.+24     	; 0x16c <animation_select+0x90>
+		case 7: subDivMAX=subDivMAX_FAST;
+ 154:	89 e1       	ldi	r24, 0x19	; 25
+ 156:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subDivMAX>
+		case 3: animationCOunterMAX=two_apart_length;
+ 15a:	82 e0       	ldi	r24, 0x02	; 2
+ 15c:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
+				animationData=&two_apart[0];
+ 160:	84 e2       	ldi	r24, 0x24	; 36
+ 162:	90 e0       	ldi	r25, 0x00	; 0
+ 164:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
+ 168:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
+				break;	
+	}
+	
+	charlieBuffer=animationData[0];
+ 16c:	e0 91 70 00 	lds	r30, 0x0070	; 0x800070 <animationData>
+ 170:	f0 91 71 00 	lds	r31, 0x0071	; 0x800071 <animationData+0x1>
+ 174:	85 91       	lpm	r24, Z+
+ 176:	95 91       	lpm	r25, Z+
+ 178:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
+ 17c:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
+	leds_enabled=1;
+ 180:	81 e0       	ldi	r24, 0x01	; 1
+ 182:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <leds_enabled>
+	
+}
+ 186:	cf 91       	pop	r28
+ 188:	08 95       	ret
+
+0000018a <isButFlag>:
+
+uint8_t isButFlag (void)
+{
+	uint8_t temp = butEventFlag;
+ 18a:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
+	butEventFlag = 0;
+ 18e:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <__data_end>
+	return temp;
+}
+ 192:	08 95       	ret
+
+00000194 <__vector_6>:
+
+ISR(TIM0_COMPA_vect)
+{
+ 194:	1f 92       	push	r1
+ 196:	0f 92       	push	r0
+ 198:	0f b6       	in	r0, 0x3f	; 63
+ 19a:	0f 92       	push	r0
+ 19c:	11 24       	eor	r1, r1
+ 19e:	2f 93       	push	r18
+ 1a0:	3f 93       	push	r19
+ 1a2:	4f 93       	push	r20
+ 1a4:	5f 93       	push	r21
+ 1a6:	6f 93       	push	r22
+ 1a8:	7f 93       	push	r23
+ 1aa:	8f 93       	push	r24
+ 1ac:	9f 93       	push	r25
+ 1ae:	af 93       	push	r26
+ 1b0:	bf 93       	push	r27
+ 1b2:	ef 93       	push	r30
+ 1b4:	ff 93       	push	r31
+	if (leds_enabled)
+ 1b6:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <leds_enabled>
+ 1ba:	88 23       	and	r24, r24
+ 1bc:	09 f4       	brne	.+2      	; 0x1c0 <__vector_6+0x2c>
+ 1be:	4d c0       	rjmp	.+154    	; 0x25a <__vector_6+0xc6>
+	{
+		if (charlieBuffer&1)
+ 1c0:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <charlieBuffer>
+ 1c4:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <charlieBuffer+0x1>
+ 1c8:	80 ff       	sbrs	r24, 0
+ 1ca:	04 c0       	rjmp	.+8      	; 0x1d4 <__vector_6+0x40>
+		charlie(charlieCOunt);
+ 1cc:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
+ 1d0:	93 d0       	rcall	.+294    	; 0x2f8 <charlie>
+ 1d2:	02 c0       	rjmp	.+4      	; 0x1d8 <__vector_6+0x44>
+		else
+		charlie(255);
+ 1d4:	8f ef       	ldi	r24, 0xFF	; 255
+ 1d6:	90 d0       	rcall	.+288    	; 0x2f8 <charlie>
+		charlieCOunt++;
+ 1d8:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
+ 1dc:	8f 5f       	subi	r24, 0xFF	; 255
+ 1de:	80 93 6a 00 	sts	0x006A, r24	; 0x80006a <charlieCOunt>
+		charlieBuffer = charlieBuffer>>1;
+ 1e2:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <charlieBuffer>
+ 1e6:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <charlieBuffer+0x1>
+ 1ea:	96 95       	lsr	r25
+ 1ec:	87 95       	ror	r24
+ 1ee:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
+ 1f2:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
+		if (charlieCOunt>charlieCountMAX)
+ 1f6:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
+ 1fa:	8c 30       	cpi	r24, 0x0C	; 12
+ 1fc:	70 f1       	brcs	.+92     	; 0x25a <__vector_6+0xc6>
+		{
+			subDiV++;
+ 1fe:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <subDiV>
+ 202:	8f 5f       	subi	r24, 0xFF	; 255
+ 204:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <subDiV>
+			charlieCOunt=0;
+ 208:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <charlieCOunt>
+			if (subDiV>subDivMAX)
+ 20c:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <subDiV>
+ 210:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <subDivMAX>
+ 214:	89 17       	cp	r24, r25
+ 216:	78 f4       	brcc	.+30     	; 0x236 <__vector_6+0xa2>
+			{
+				subDiV=0;
+ 218:	10 92 69 00 	sts	0x0069, r1	; 0x800069 <subDiV>
+				animationCounter++;
+ 21c:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <animationCounter>
+ 220:	8f 5f       	subi	r24, 0xFF	; 255
+ 222:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <animationCounter>
+				if (animationCounter>=animationCOunterMAX)
+ 226:	90 91 6f 00 	lds	r25, 0x006F	; 0x80006f <animationCounter>
+ 22a:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <animationCOunterMAX>
+ 22e:	98 17       	cp	r25, r24
+ 230:	10 f0       	brcs	.+4      	; 0x236 <__vector_6+0xa2>
+				{
+					animationCounter=0;
+ 232:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <animationCounter>
+					
+				}
+			}
+			charlieBuffer=animationData[animationCounter];
+ 236:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <animationCounter>
+ 23a:	20 91 70 00 	lds	r18, 0x0070	; 0x800070 <animationData>
+ 23e:	90 91 71 00 	lds	r25, 0x0071	; 0x800071 <animationData+0x1>
+ 242:	e2 2f       	mov	r30, r18
+ 244:	f9 2f       	mov	r31, r25
+ 246:	e8 0f       	add	r30, r24
+ 248:	f1 1d       	adc	r31, r1
+ 24a:	e8 0f       	add	r30, r24
+ 24c:	f1 1d       	adc	r31, r1
+ 24e:	85 91       	lpm	r24, Z+
+ 250:	95 91       	lpm	r25, Z+
+ 252:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
+ 256:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
+		}
+	}
+	
+	butDiv++;
+ 25a:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <butDiv>
+ 25e:	8f 5f       	subi	r24, 0xFF	; 255
+ 260:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <butDiv>
+	if (butDiv>butDivMAX)
+ 264:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <butDiv>
+ 268:	86 30       	cpi	r24, 0x06	; 6
+ 26a:	80 f1       	brcs	.+96     	; 0x2cc <__vector_6+0x138>
+	{
+		butDiv=0;
+ 26c:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <butDiv>
+		butState=(PINB & (1 << PB1));
+ 270:	86 b3       	in	r24, 0x16	; 22
+ 272:	82 70       	andi	r24, 0x02	; 2
+ 274:	80 93 63 00 	sts	0x0063, r24	; 0x800063 <butState>
+		if (butState==0)
+ 278:	81 11       	cpse	r24, r1
+ 27a:	09 c0       	rjmp	.+18     	; 0x28e <__vector_6+0xfa>
+		{
+			butDownCounter++;
+ 27c:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <butDownCounter>
+ 280:	9f 5f       	subi	r25, 0xFF	; 255
+			if (butDownCounter>254) butDownCounter=254;
+ 282:	9f 3f       	cpi	r25, 0xFF	; 255
+ 284:	f1 f4       	brne	.+60     	; 0x2c2 <__vector_6+0x12e>
+ 286:	9e ef       	ldi	r25, 0xFE	; 254
+ 288:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <butDownCounter>
+ 28c:	1c c0       	rjmp	.+56     	; 0x2c6 <__vector_6+0x132>
+		}
+		if ((~oldButState) & butState)
+ 28e:	40 91 62 00 	lds	r20, 0x0062	; 0x800062 <oldButState>
+ 292:	28 2f       	mov	r18, r24
+ 294:	30 e0       	ldi	r19, 0x00	; 0
+ 296:	50 e0       	ldi	r21, 0x00	; 0
+ 298:	40 95       	com	r20
+ 29a:	50 95       	com	r21
+ 29c:	24 23       	and	r18, r20
+ 29e:	35 23       	and	r19, r21
+ 2a0:	23 2b       	or	r18, r19
+ 2a2:	61 f0       	breq	.+24     	; 0x2bc <__vector_6+0x128>
+		{
+			if (butDownCounter>butDownCounterMAX) sleep_flag=1;
+ 2a4:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <butDownCounter>
+ 2a8:	99 3c       	cpi	r25, 0xC9	; 201
+ 2aa:	18 f0       	brcs	.+6      	; 0x2b2 <__vector_6+0x11e>
+ 2ac:	91 e0       	ldi	r25, 0x01	; 1
+ 2ae:	90 93 60 00 	sts	0x0060, r25	; 0x800060 <__data_start>
+			butEventFlag=1;
+ 2b2:	91 e0       	ldi	r25, 0x01	; 1
+ 2b4:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <__data_end>
+			butDownCounter=0;
+ 2b8:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <butDownCounter>
+		}
+		oldButState=butState;
+ 2bc:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <oldButState>
+ 2c0:	05 c0       	rjmp	.+10     	; 0x2cc <__vector_6+0x138>
+	{
+		butDiv=0;
+		butState=(PINB & (1 << PB1));
+		if (butState==0)
+		{
+			butDownCounter++;
+ 2c2:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <butDownCounter>
+			if (butDownCounter>254) butDownCounter=254;
+		}
+		if ((~oldButState) & butState)
+ 2c6:	90 91 62 00 	lds	r25, 0x0062	; 0x800062 <oldButState>
+ 2ca:	f8 cf       	rjmp	.-16     	; 0x2bc <__vector_6+0x128>
+		}
+		oldButState=butState;
+		
+	}
+	
+}
+ 2cc:	ff 91       	pop	r31
+ 2ce:	ef 91       	pop	r30
+ 2d0:	bf 91       	pop	r27
+ 2d2:	af 91       	pop	r26
+ 2d4:	9f 91       	pop	r25
+ 2d6:	8f 91       	pop	r24
+ 2d8:	7f 91       	pop	r23
+ 2da:	6f 91       	pop	r22
+ 2dc:	5f 91       	pop	r21
+ 2de:	4f 91       	pop	r20
+ 2e0:	3f 91       	pop	r19
+ 2e2:	2f 91       	pop	r18
+ 2e4:	0f 90       	pop	r0
+ 2e6:	0f be       	out	0x3f, r0	; 63
+ 2e8:	0f 90       	pop	r0
+ 2ea:	1f 90       	pop	r1
+ 2ec:	18 95       	reti
+
+000002ee <leds_off>:
+	
+	
 void leds_off()
 {
 	//DDRB &= ~(0b00011101);
 	PORTB &= ~(0b00011101);
-  78:	88 b3       	in	r24, 0x18	; 24
-  7a:	82 7e       	andi	r24, 0xE2	; 226
-  7c:	88 bb       	out	0x18, r24	; 24
+ 2ee:	88 b3       	in	r24, 0x18	; 24
+ 2f0:	82 7e       	andi	r24, 0xE2	; 226
+ 2f2:	88 bb       	out	0x18, r24	; 24
 	DDRB=0;
-  7e:	17 ba       	out	0x17, r1	; 23
-  80:	08 95       	ret
+ 2f4:	17 ba       	out	0x17, r1	; 23
+ 2f6:	08 95       	ret
 
-00000082 <charlie>:
-	{ (1 << PB0) | (1 << PB4), (1 << PB4) }		//12
-	};
-	
+000002f8 <charlie>:
+	//PORTB=0;
+}	
 
 void charlie (byte var) 
 {
-  82:	cf 93       	push	r28
-  84:	c8 2f       	mov	r28, r24
+ 2f8:	cf 93       	push	r28
+ 2fa:	c8 2f       	mov	r28, r24
 	//if (var>11) return;
 	leds_off();
-  86:	f8 df       	rcall	.-16     	; 0x78 <leds_off>
-	//PORTB=0;
-	DDRB=portMasks[var][0];
-  88:	ec 2f       	mov	r30, r28
-  8a:	f0 e0       	ldi	r31, 0x00	; 0
-  8c:	ee 0f       	add	r30, r30
-  8e:	ff 1f       	adc	r31, r31
-  90:	ec 5e       	subi	r30, 0xEC	; 236
-  92:	ff 4f       	sbci	r31, 0xFF	; 255
-  94:	85 91       	lpm	r24, Z+
-  96:	87 bb       	out	0x17, r24	; 23
-	PORTB|=portMasks[var][1];
-  98:	98 b3       	in	r25, 0x18	; 24
-  9a:	84 91       	lpm	r24, Z
-  9c:	89 2b       	or	r24, r25
-  9e:	88 bb       	out	0x18, r24	; 24
+ 2fc:	f8 df       	rcall	.-16     	; 0x2ee <leds_off>
 	nop();
-  a0:	00 00       	nop
+ 2fe:	00 00       	nop
+	//PORTB=0;
+	if (var<12)
+ 300:	cc 30       	cpi	r28, 0x0C	; 12
+ 302:	90 f4       	brcc	.+36     	; 0x328 <charlie+0x30>
+	{
+		PORTB|=portMasks[var][1];
+ 304:	98 b3       	in	r25, 0x18	; 24
+ 306:	ec 2f       	mov	r30, r28
+ 308:	f0 e0       	ldi	r31, 0x00	; 0
+ 30a:	ee 0f       	add	r30, r30
+ 30c:	ff 1f       	adc	r31, r31
+ 30e:	af 01       	movw	r20, r30
+ 310:	4c 5a       	subi	r20, 0xAC	; 172
+ 312:	5f 4f       	sbci	r21, 0xFF	; 255
+ 314:	9a 01       	movw	r18, r20
+ 316:	2f 5f       	subi	r18, 0xFF	; 255
+ 318:	3f 4f       	sbci	r19, 0xFF	; 255
+ 31a:	f9 01       	movw	r30, r18
+ 31c:	84 91       	lpm	r24, Z
+ 31e:	89 2b       	or	r24, r25
+ 320:	88 bb       	out	0x18, r24	; 24
+		DDRB=portMasks[var][0];
+ 322:	fa 01       	movw	r30, r20
+ 324:	84 91       	lpm	r24, Z
+ 326:	87 bb       	out	0x17, r24	; 23
+	}
+	nop();
+ 328:	00 00       	nop
 }
-  a2:	cf 91       	pop	r28
-  a4:	08 95       	ret
+ 32a:	cf 91       	pop	r28
+ 32c:	08 95       	ret
 
-000000a6 <__vector_1>:
-	0b10101010, 0b10100000,
-	0b01010101, 0b01010000,
-};
+0000032e <__vector_1>:
+// prototypes
+void shutdown_chip(void);
+void blip(void);
 
 // should have taken a switch, sleep stuff is huge
 ISR(INT0_vect) {
-  a6:	1f 92       	push	r1
-  a8:	0f 92       	push	r0
-  aa:	0f b6       	in	r0, 0x3f	; 63
-  ac:	0f 92       	push	r0
-  ae:	11 24       	eor	r1, r1
-  b0:	8f 93       	push	r24
+ 32e:	1f 92       	push	r1
+ 330:	0f 92       	push	r0
+ 332:	0f b6       	in	r0, 0x3f	; 63
+ 334:	0f 92       	push	r0
+ 336:	11 24       	eor	r1, r1
+ 338:	8f 93       	push	r24
 	sleep_disable();
-  b2:	85 b7       	in	r24, 0x35	; 53
-  b4:	8f 7d       	andi	r24, 0xDF	; 223
-  b6:	85 bf       	out	0x35, r24	; 53
-	leds_on = true;
-  b8:	81 e0       	ldi	r24, 0x01	; 1
-  ba:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <leds_on>
+ 33a:	85 b7       	in	r24, 0x35	; 53
+ 33c:	8f 7d       	andi	r24, 0xDF	; 223
+ 33e:	85 bf       	out	0x35, r24	; 53
+	
+	
+	GIMSK &= ~(1 << INT0);
+ 340:	8b b7       	in	r24, 0x3b	; 59
+ 342:	8f 7b       	andi	r24, 0xBF	; 191
+ 344:	8b bf       	out	0x3b, r24	; 59
+	GIMSK &= ~(1 << PCIE);
+ 346:	8b b7       	in	r24, 0x3b	; 59
+ 348:	8f 7d       	andi	r24, 0xDF	; 223
+ 34a:	8b bf       	out	0x3b, r24	; 59
+	currentAnimation=0;
+ 34c:	10 92 6d 00 	sts	0x006D, r1	; 0x80006d <currentAnimation>
+	
 }
-  be:	8f 91       	pop	r24
-  c0:	0f 90       	pop	r0
-  c2:	0f be       	out	0x3f, r0	; 63
-  c4:	0f 90       	pop	r0
-  c6:	1f 90       	pop	r1
-  c8:	18 95       	reti
+ 350:	8f 91       	pop	r24
+ 352:	0f 90       	pop	r0
+ 354:	0f be       	out	0x3f, r0	; 63
+ 356:	0f 90       	pop	r0
+ 358:	1f 90       	pop	r1
+ 35a:	18 95       	reti
 
-000000ca <shutdown_chip>:
-    }
+0000035c <shutdown_chip>:
 }
 
 void shutdown_chip()
 {
-	animation_counter = 0;
-  ca:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <animation_counter>
+	
 	leds_off();
-  ce:	d4 df       	rcall	.-88     	; 0x78 <leds_off>
+ 35c:	c8 df       	rcall	.-112    	; 0x2ee <leds_off>
 
 	/* Clear WDRF in MCUSR */
 	MCUSR &= ~(1 << WDRF);
-  d0:	84 b7       	in	r24, 0x34	; 52
-  d2:	87 7f       	andi	r24, 0xF7	; 247
-  d4:	84 bf       	out	0x34, r24	; 52
+ 35e:	84 b7       	in	r24, 0x34	; 52
+ 360:	87 7f       	andi	r24, 0xF7	; 247
+ 362:	84 bf       	out	0x34, r24	; 52
 	/* Write logical one to WDCE and WDE */
 	/* Keep old prescaler setting to prevent unintentional time-out */
 	WDTCR |= (1 << WDCE) | (1 << WDE);
-  d6:	81 b5       	in	r24, 0x21	; 33
-  d8:	88 61       	ori	r24, 0x18	; 24
-  da:	81 bd       	out	0x21, r24	; 33
+ 364:	81 b5       	in	r24, 0x21	; 33
+ 366:	88 61       	ori	r24, 0x18	; 24
+ 368:	81 bd       	out	0x21, r24	; 33
 	/* Turn off WDT */
 	WDTCR = 0x00;
-  dc:	11 bc       	out	0x21, r1	; 33
+ 36a:	11 bc       	out	0x21, r1	; 33
 
 	ADCSRA &= ~(1 << ADEN); // turn off adc
-  de:	37 98       	cbi	0x06, 7	; 6
+ 36c:	37 98       	cbi	0x06, 7	; 6
 
 	GIMSK |= (1 << INT0);
-  e0:	8b b7       	in	r24, 0x3b	; 59
-  e2:	80 64       	ori	r24, 0x40	; 64
-  e4:	8b bf       	out	0x3b, r24	; 59
+ 36e:	8b b7       	in	r24, 0x3b	; 59
+ 370:	80 64       	ori	r24, 0x40	; 64
+ 372:	8b bf       	out	0x3b, r24	; 59
 	GIMSK |= (1 << PCIE);
-  e6:	8b b7       	in	r24, 0x3b	; 59
-  e8:	80 62       	ori	r24, 0x20	; 32
-  ea:	8b bf       	out	0x3b, r24	; 59
+ 374:	8b b7       	in	r24, 0x3b	; 59
+ 376:	80 62       	ori	r24, 0x20	; 32
+ 378:	8b bf       	out	0x3b, r24	; 59
 
 	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-  ec:	85 b7       	in	r24, 0x35	; 53
-  ee:	87 7e       	andi	r24, 0xE7	; 231
-  f0:	80 61       	ori	r24, 0x10	; 16
-  f2:	85 bf       	out	0x35, r24	; 53
+ 37a:	85 b7       	in	r24, 0x35	; 53
+ 37c:	87 7e       	andi	r24, 0xE7	; 231
+ 37e:	80 61       	ori	r24, 0x10	; 16
+ 380:	85 bf       	out	0x35, r24	; 53
 	sleep_enable();
-  f4:	85 b7       	in	r24, 0x35	; 53
-  f6:	80 62       	ori	r24, 0x20	; 32
-  f8:	85 bf       	out	0x35, r24	; 53
+ 382:	85 b7       	in	r24, 0x35	; 53
+ 384:	80 62       	ori	r24, 0x20	; 32
+ 386:	85 bf       	out	0x35, r24	; 53
 	sei(); // Enable global interrupts
-  fa:	78 94       	sei
+ 388:	78 94       	sei
 	sleep_cpu();
-  fc:	88 95       	sleep
+ 38a:	88 95       	sleep
 	sleep_disable();
-  fe:	85 b7       	in	r24, 0x35	; 53
- 100:	8f 7d       	andi	r24, 0xDF	; 223
- 102:	85 bf       	out	0x35, r24	; 53
- 104:	08 95       	ret
+ 38c:	85 b7       	in	r24, 0x35	; 53
+ 38e:	8f 7d       	andi	r24, 0xDF	; 223
+ 390:	85 bf       	out	0x35, r24	; 53
+ 392:	08 95       	ret
 
-00000106 <show_frame>:
-
-// this just looks ugly, but needs to be done
-// for loop through frame bytes to set the LEDs with
-// the charlie plex function
-void show_frame(uint16_t byteframe_length)
-{
- 106:	cf 92       	push	r12
- 108:	df 92       	push	r13
- 10a:	ef 92       	push	r14
- 10c:	ff 92       	push	r15
- 10e:	0f 93       	push	r16
- 110:	1f 93       	push	r17
- 112:	cf 93       	push	r28
- 114:	df 93       	push	r29
-	for (uint16_t j = 0; j < byteframe_length; j++)
- 116:	00 97       	sbiw	r24, 0x00	; 0
- 118:	59 f5       	brne	.+86     	; 0x170 <show_frame+0x6a>
- 11a:	32 c0       	rjmp	.+100    	; 0x180 <show_frame+0x7a>
- 11c:	8c 2f       	mov	r24, r28
-	{
-		//iterate through bit mask
-		for (byte i = 0; i < 12; i++)
-		{
-			// if bitwise AND resolves to true
-			if (
- 11e:	c8 30       	cpi	r28, 0x08	; 8
- 120:	60 f4       	brcc	.+24     	; 0x13a <show_frame+0x34>
-			(
-			i < 8 &&
- 122:	20 91 63 00 	lds	r18, 0x0063	; 0x800063 <frame1>
- 126:	30 e0       	ldi	r19, 0x00	; 0
- 128:	0c 2e       	mov	r0, r28
- 12a:	02 c0       	rjmp	.+4      	; 0x130 <show_frame+0x2a>
- 12c:	35 95       	asr	r19
- 12e:	27 95       	ror	r18
- 130:	0a 94       	dec	r0
- 132:	e2 f7       	brpl	.-8      	; 0x12c <show_frame+0x26>
- 134:	20 fd       	sbrc	r18, 0
- 136:	0e c0       	rjmp	.+28     	; 0x154 <show_frame+0x4e>
- 138:	0f c0       	rjmp	.+30     	; 0x158 <show_frame+0x52>
-			1 << i & frame1
-			) ||
-			(
-			i > 7 &&
- 13a:	20 91 62 00 	lds	r18, 0x0062	; 0x800062 <__data_end>
- 13e:	30 e0       	ldi	r19, 0x00	; 0
- 140:	ae 01       	movw	r20, r28
- 142:	44 50       	subi	r20, 0x04	; 4
- 144:	51 09       	sbc	r21, r1
- 146:	02 c0       	rjmp	.+4      	; 0x14c <show_frame+0x46>
- 148:	35 95       	asr	r19
- 14a:	27 95       	ror	r18
- 14c:	4a 95       	dec	r20
- 14e:	e2 f7       	brpl	.-8      	; 0x148 <show_frame+0x42>
- 150:	20 ff       	sbrs	r18, 0
- 152:	02 c0       	rjmp	.+4      	; 0x158 <show_frame+0x52>
-			1 << (i - 4) & frame2
-			)
-			)
-			{
-				charlie(i);
- 154:	96 df       	rcall	.-212    	; 0x82 <charlie>
- 156:	02 c0       	rjmp	.+4      	; 0x15c <show_frame+0x56>
-			}
-			else
-			{
-				charlie(255);
- 158:	8f ef       	ldi	r24, 0xFF	; 255
- 15a:	93 df       	rcall	.-218    	; 0x82 <charlie>
- 15c:	21 96       	adiw	r28, 0x01	; 1
-void show_frame(uint16_t byteframe_length)
-{
-	for (uint16_t j = 0; j < byteframe_length; j++)
-	{
-		//iterate through bit mask
-		for (byte i = 0; i < 12; i++)
- 15e:	cc 30       	cpi	r28, 0x0C	; 12
- 160:	d1 05       	cpc	r29, r1
- 162:	e1 f6       	brne	.-72     	; 0x11c <show_frame+0x16>
-// this just looks ugly, but needs to be done
-// for loop through frame bytes to set the LEDs with
-// the charlie plex function
-void show_frame(uint16_t byteframe_length)
-{
-	for (uint16_t j = 0; j < byteframe_length; j++)
- 164:	0f 5f       	subi	r16, 0xFF	; 255
- 166:	1f 4f       	sbci	r17, 0xFF	; 255
- 168:	0e 15       	cp	r16, r14
- 16a:	1f 05       	cpc	r17, r15
- 16c:	31 f4       	brne	.+12     	; 0x17a <show_frame+0x74>
- 16e:	08 c0       	rjmp	.+16     	; 0x180 <show_frame+0x7a>
- 170:	7c 01       	movw	r14, r24
- 172:	00 e0       	ldi	r16, 0x00	; 0
- 174:	10 e0       	ldi	r17, 0x00	; 0
-
-// this just looks ugly, but needs to be done
-// for loop through frame bytes to set the LEDs with
-// the charlie plex function
-void show_frame(uint16_t byteframe_length)
-{
- 176:	c1 2c       	mov	r12, r1
- 178:	d1 2c       	mov	r13, r1
- 17a:	cc 2d       	mov	r28, r12
- 17c:	dd 2d       	mov	r29, r13
- 17e:	ce cf       	rjmp	.-100    	; 0x11c <show_frame+0x16>
-			{
-				charlie(255);
-			}
-		}
-	}
-}
- 180:	df 91       	pop	r29
- 182:	cf 91       	pop	r28
- 184:	1f 91       	pop	r17
- 186:	0f 91       	pop	r16
- 188:	ff 90       	pop	r15
- 18a:	ef 90       	pop	r14
- 18c:	df 90       	pop	r13
- 18e:	cf 90       	pop	r12
- 190:	08 95       	ret
-
-00000192 <animate_frames>:
-
-void animate_frames(
-byte animation_length,
-const byte* animation_array,
-uint16_t frame_duration
-) {
- 192:	ef 92       	push	r14
- 194:	ff 92       	push	r15
- 196:	0f 93       	push	r16
- 198:	1f 93       	push	r17
- 19a:	cf 93       	push	r28
- 19c:	df 93       	push	r29
-	for (byte i = 0; i < animation_length; i += 2)
- 19e:	88 23       	and	r24, r24
- 1a0:	c9 f0       	breq	.+50     	; 0x1d4 <animate_frames+0x42>
- 1a2:	8a 01       	movw	r16, r20
- 1a4:	eb 01       	movw	r28, r22
- 1a6:	e8 2e       	mov	r14, r24
- 1a8:	f1 2c       	mov	r15, r1
-	{
-		// save the last time you blinked the LED
-		frame1 = pgm_read_byte_near(animation_array + i);
- 1aa:	2f 2d       	mov	r18, r15
- 1ac:	30 e0       	ldi	r19, 0x00	; 0
- 1ae:	fe 01       	movw	r30, r28
- 1b0:	e2 0f       	add	r30, r18
- 1b2:	f3 1f       	adc	r31, r19
- 1b4:	e4 91       	lpm	r30, Z
- 1b6:	e0 93 63 00 	sts	0x0063, r30	; 0x800063 <frame1>
-		frame2 = pgm_read_byte_near(animation_array + i + 1);
- 1ba:	f9 01       	movw	r30, r18
- 1bc:	31 96       	adiw	r30, 0x01	; 1
- 1be:	ec 0f       	add	r30, r28
- 1c0:	fd 1f       	adc	r31, r29
- 1c2:	e4 91       	lpm	r30, Z
- 1c4:	e0 93 62 00 	sts	0x0062, r30	; 0x800062 <__data_end>
-		show_frame(frame_duration);
- 1c8:	c8 01       	movw	r24, r16
- 1ca:	9d df       	rcall	.-198    	; 0x106 <show_frame>
-void animate_frames(
-byte animation_length,
-const byte* animation_array,
-uint16_t frame_duration
-) {
-	for (byte i = 0; i < animation_length; i += 2)
- 1cc:	f3 94       	inc	r15
- 1ce:	f3 94       	inc	r15
- 1d0:	fe 14       	cp	r15, r14
- 1d2:	58 f3       	brcs	.-42     	; 0x1aa <animate_frames+0x18>
-		// save the last time you blinked the LED
-		frame1 = pgm_read_byte_near(animation_array + i);
-		frame2 = pgm_read_byte_near(animation_array + i + 1);
-		show_frame(frame_duration);
-	}
-}
- 1d4:	df 91       	pop	r29
- 1d6:	cf 91       	pop	r28
- 1d8:	1f 91       	pop	r17
- 1da:	0f 91       	pop	r16
- 1dc:	ff 90       	pop	r15
- 1de:	ef 90       	pop	r14
- 1e0:	08 95       	ret
-
-000001e2 <animate_leds>:
-	sleep_cpu();
-	sleep_disable();
-}
-
-void animate_leds()
-{
- 1e2:	cf 93       	push	r28
- 1e4:	df 93       	push	r29
-	switch (animation_counter)
- 1e6:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <animation_counter>
- 1ea:	82 30       	cpi	r24, 0x02	; 2
- 1ec:	f9 f0       	breq	.+62     	; 0x22c <animate_leds+0x4a>
- 1ee:	28 f4       	brcc	.+10     	; 0x1fa <animate_leds+0x18>
- 1f0:	88 23       	and	r24, r24
- 1f2:	41 f0       	breq	.+16     	; 0x204 <animate_leds+0x22>
- 1f4:	81 30       	cpi	r24, 0x01	; 1
- 1f6:	69 f0       	breq	.+26     	; 0x212 <animate_leds+0x30>
- 1f8:	34 c0       	rjmp	.+104    	; 0x262 <animate_leds+0x80>
- 1fa:	83 30       	cpi	r24, 0x03	; 3
- 1fc:	f1 f0       	breq	.+60     	; 0x23a <animate_leds+0x58>
- 1fe:	84 30       	cpi	r24, 0x04	; 4
- 200:	19 f1       	breq	.+70     	; 0x248 <animate_leds+0x66>
- 202:	2f c0       	rjmp	.+94     	; 0x262 <animate_leds+0x80>
-	{
-		case 0:
-		animate_frames(
- 204:	40 e0       	ldi	r20, 0x00	; 0
- 206:	52 e0       	ldi	r21, 0x02	; 2
- 208:	6e e3       	ldi	r22, 0x3E	; 62
- 20a:	70 e0       	ldi	r23, 0x00	; 0
- 20c:	86 e0       	ldi	r24, 0x06	; 6
- 20e:	c1 df       	rcall	.-126    	; 0x192 <animate_frames>
-		three_apart_length,
-		three_apart,
-		512
-		);
-		break;
- 210:	29 c0       	rjmp	.+82     	; 0x264 <animate_leds+0x82>
-	sleep_disable();
-}
-
-void animate_leds()
-{
-	switch (animation_counter)
- 212:	c8 e0       	ldi	r28, 0x08	; 8
- 214:	d0 e0       	ldi	r29, 0x00	; 0
-		break;
-
-		case 1:
-		for (byte acc_counter = 1; acc_counter < 64; acc_counter += 2)
-		{
-			animate_frames(
- 216:	ae 01       	movw	r20, r28
- 218:	6e e3       	ldi	r22, 0x3E	; 62
- 21a:	70 e0       	ldi	r23, 0x00	; 0
- 21c:	86 e0       	ldi	r24, 0x06	; 6
- 21e:	b9 df       	rcall	.-142    	; 0x192 <animate_frames>
- 220:	60 96       	adiw	r28, 0x10	; 16
-		512
-		);
-		break;
-
-		case 1:
-		for (byte acc_counter = 1; acc_counter < 64; acc_counter += 2)
- 222:	c8 30       	cpi	r28, 0x08	; 8
- 224:	82 e0       	ldi	r24, 0x02	; 2
- 226:	d8 07       	cpc	r29, r24
- 228:	b1 f7       	brne	.-20     	; 0x216 <animate_leds+0x34>
- 22a:	1c c0       	rjmp	.+56     	; 0x264 <animate_leds+0x82>
-			);
-		}
-		break;
-
-		case 2:
-		animate_frames(
- 22c:	40 e0       	ldi	r20, 0x00	; 0
- 22e:	52 e0       	ldi	r21, 0x02	; 2
- 230:	60 e3       	ldi	r22, 0x30	; 48
- 232:	70 e0       	ldi	r23, 0x00	; 0
- 234:	8e e0       	ldi	r24, 0x0E	; 14
- 236:	ad df       	rcall	.-166    	; 0x192 <animate_frames>
-		updown_length,
-		updown,
-		512
-		);
-		break;
- 238:	15 c0       	rjmp	.+42     	; 0x264 <animate_leds+0x82>
-
-		case 3:
-		animate_frames(
- 23a:	40 e0       	ldi	r20, 0x00	; 0
- 23c:	58 e0       	ldi	r21, 0x08	; 8
- 23e:	6c e2       	ldi	r22, 0x2C	; 44
- 240:	70 e0       	ldi	r23, 0x00	; 0
- 242:	84 e0       	ldi	r24, 0x04	; 4
- 244:	a6 df       	rcall	.-180    	; 0x192 <animate_frames>
-		two_apart_length,
-		two_apart,
-		2048
-		);
-		break;
- 246:	0e c0       	rjmp	.+28     	; 0x264 <animate_leds+0x82>
-	sleep_disable();
-}
-
-void animate_leds()
-{
-	switch (animation_counter)
- 248:	c8 ef       	ldi	r28, 0xF8	; 248
- 24a:	d0 e0       	ldi	r29, 0x00	; 0
-		break;
-
-		case 4:
-		for (byte acc_counter = 1; acc_counter < 64; acc_counter += 2)
-		{
-			animate_frames(
- 24c:	ae 01       	movw	r20, r28
- 24e:	60 e3       	ldi	r22, 0x30	; 48
- 250:	70 e0       	ldi	r23, 0x00	; 0
- 252:	8e e0       	ldi	r24, 0x0E	; 14
- 254:	9e df       	rcall	.-196    	; 0x192 <animate_frames>
- 256:	28 97       	sbiw	r28, 0x08	; 8
-		2048
-		);
-		break;
-
-		case 4:
-		for (byte acc_counter = 1; acc_counter < 64; acc_counter += 2)
- 258:	c8 3f       	cpi	r28, 0xF8	; 248
- 25a:	8f ef       	ldi	r24, 0xFF	; 255
- 25c:	d8 07       	cpc	r29, r24
- 25e:	b1 f7       	brne	.-20     	; 0x24c <animate_leds+0x6a>
- 260:	01 c0       	rjmp	.+2      	; 0x264 <animate_leds+0x82>
-			);
-		}
-		break;
-
-		default:
-		leds_off();
- 262:	0a df       	rcall	.-492    	; 0x78 <leds_off>
-		break;
-	}
-}
- 264:	df 91       	pop	r29
- 266:	cf 91       	pop	r28
- 268:	08 95       	ret
-
-0000026a <my_100ms_delay>:
-	// delay(100);
-	my_100ms_delay();
-}
-
-void my_100ms_delay()
-{
- 26a:	80 e0       	ldi	r24, 0x00	; 0
- 26c:	90 e0       	ldi	r25, 0x00	; 0
-	for (uint32_t i=0;i<40000;i++) nop();
- 26e:	00 00       	nop
- 270:	01 96       	adiw	r24, 0x01	; 1
- 272:	80 34       	cpi	r24, 0x40	; 64
- 274:	2c e9       	ldi	r18, 0x9C	; 156
- 276:	92 07       	cpc	r25, r18
- 278:	d1 f7       	brne	.-12     	; 0x26e <my_100ms_delay+0x4>
-}
- 27a:	08 95       	ret
-
-0000027c <blip>:
-	}
-}
-
-void blip()
-{
-	charlie(11);
- 27c:	8b e0       	ldi	r24, 0x0B	; 11
- 27e:	01 df       	rcall	.-510    	; 0x82 <charlie>
-	// delay(100);
-	my_100ms_delay();
- 280:	f4 df       	rcall	.-24     	; 0x26a <my_100ms_delay>
-	charlie(255);
- 282:	8f ef       	ldi	r24, 0xFF	; 255
- 284:	fe de       	rcall	.-516    	; 0x82 <charlie>
-	// delay(100);
-	my_100ms_delay();
- 286:	f1 df       	rcall	.-30     	; 0x26a <my_100ms_delay>
- 288:	08 95       	ret
-
-0000028a <main>:
-
+00000394 <main>:
 
 int main(void)
 {
+	
     // this is for the button setup
     PORTB |= (1 << PB1);
- 28a:	c1 9a       	sbi	0x18, 1	; 24
+ 394:	c1 9a       	sbi	0x18, 1	; 24
     DDRB &= ~(1 << PB1);
- 28c:	b9 98       	cbi	0x17, 1	; 23
-
-    shutdown_chip();
- 28e:	1d df       	rcall	.-454    	; 0xca <shutdown_chip>
+ 396:	b9 98       	cbi	0x17, 1	; 23
 	
-    while (1) 
-    {
-		if (leds_on)
- 290:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <leds_on>
- 294:	88 23       	and	r24, r24
- 296:	29 f0       	breq	.+10     	; 0x2a2 <main+0x18>
+	animation_init();
+ 398:	83 de       	rcall	.-762    	; 0xa0 <animation_init>
+	animation_select(currentAnimation);
+ 39a:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
+ 39e:	9e de       	rcall	.-708    	; 0xdc <animation_select>
+	sei();
+ 3a0:	78 94       	sei
+	while(1)
+	{
+		if (sleep_flag)
+ 3a2:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__data_start>
+ 3a6:	88 23       	and	r24, r24
+ 3a8:	19 f0       	breq	.+6      	; 0x3b0 <main+0x1c>
 		{
-			cli();
- 298:	f8 94       	cli
-			leds_on = false;
- 29a:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <leds_on>
-
-			// I call it that, because the millis stuff
-			// and the interrupts collided and broke
-			badly_programmed_counter = 0;
- 29e:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <badly_programmed_counter>
+			sleep_flag=0;
+ 3aa:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__data_start>
+			shutdown_chip();
+ 3ae:	d6 df       	rcall	.-84     	; 0x35c <shutdown_chip>
 		}
-
-		// fancy way of checking the button state
-		if (!(PINB & (1 << PB1)))
- 2a2:	b1 99       	sbic	0x16, 1	; 22
- 2a4:	1e c0       	rjmp	.+60     	; 0x2e2 <main+0x58>
+		if (isButFlag())
+ 3b0:	ec de       	rcall	.-552    	; 0x18a <isButFlag>
+ 3b2:	88 23       	and	r24, r24
+ 3b4:	b1 f3       	breq	.-20     	; 0x3a2 <main+0xe>
 		{
-			badly_programmed_counter++;
- 2a6:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <badly_programmed_counter>
- 2aa:	8f 5f       	subi	r24, 0xFF	; 255
- 2ac:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <badly_programmed_counter>
-			my_100ms_delay();
- 2b0:	dc df       	rcall	.-72     	; 0x26a <my_100ms_delay>
-
-			// check if button was released before time
-			// so animation index can be incremented
-			// maybe a modulo with animation_counter_max
-			// safes space
-			if ( (PINB & (1 << PB1)) )
- 2b2:	b1 9b       	sbis	0x16, 1	; 22
- 2b4:	1a c0       	rjmp	.+52     	; 0x2ea <main+0x60>
-			{
-				badly_programmed_counter = 0;
- 2b6:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <badly_programmed_counter>
-				animation_counter++;
- 2ba:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <animation_counter>
- 2be:	8f 5f       	subi	r24, 0xFF	; 255
- 2c0:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <animation_counter>
-				if (animation_counter == animation_counter_max)
- 2c4:	90 91 60 00 	lds	r25, 0x0060	; 0x800060 <__data_start>
- 2c8:	89 13       	cpse	r24, r25
- 2ca:	02 c0       	rjmp	.+4      	; 0x2d0 <main+0x46>
-				{
-					animation_counter = 0;
- 2cc:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <animation_counter>
-				}
-				charlie(animation_counter);
- 2d0:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <animation_counter>
- 2d4:	d6 de       	rcall	.-596    	; 0x82 <charlie>
-
-				// calling a function instead of writing it down
-				// 5 times helps already
-				for (byte b = 0; b < 5; b++) my_100ms_delay();
- 2d6:	c9 df       	rcall	.-110    	; 0x26a <my_100ms_delay>
- 2d8:	c8 df       	rcall	.-112    	; 0x26a <my_100ms_delay>
- 2da:	c7 df       	rcall	.-114    	; 0x26a <my_100ms_delay>
- 2dc:	c6 df       	rcall	.-116    	; 0x26a <my_100ms_delay>
- 2de:	c5 df       	rcall	.-118    	; 0x26a <my_100ms_delay>
- 2e0:	04 c0       	rjmp	.+8      	; 0x2ea <main+0x60>
-				shutdown_chip();
-			}
+			currentAnimation++;
+ 3b6:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
+ 3ba:	8f 5f       	subi	r24, 0xFF	; 255
+			if (currentAnimation>7) currentAnimation=0;
+ 3bc:	88 30       	cpi	r24, 0x08	; 8
+ 3be:	18 f4       	brcc	.+6      	; 0x3c6 <main+0x32>
+			sleep_flag=0;
+			shutdown_chip();
 		}
-		else
+		if (isButFlag())
 		{
-			animate_leds();
- 2e2:	7f df       	rcall	.-258    	; 0x1e2 <animate_leds>
-			badly_programmed_counter = 0;
- 2e4:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <badly_programmed_counter>
- 2e8:	d3 cf       	rjmp	.-90     	; 0x290 <main+0x6>
-				// calling a function instead of writing it down
-				// 5 times helps already
-				for (byte b = 0; b < 5; b++) my_100ms_delay();
-			}
+			currentAnimation++;
+ 3c0:	80 93 6d 00 	sts	0x006D, r24	; 0x80006d <currentAnimation>
+ 3c4:	02 c0       	rjmp	.+4      	; 0x3ca <main+0x36>
+			if (currentAnimation>7) currentAnimation=0;
+ 3c6:	10 92 6d 00 	sts	0x006D, r1	; 0x80006d <currentAnimation>
+			animation_select(currentAnimation);
+ 3ca:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
+ 3ce:	86 de       	rcall	.-756    	; 0xdc <animation_select>
+ 3d0:	e8 cf       	rjmp	.-48     	; 0x3a2 <main+0xe>
 
-			if (badly_programmed_counter >= 14)
- 2ea:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <badly_programmed_counter>
- 2ee:	8e 30       	cpi	r24, 0x0E	; 14
- 2f0:	78 f2       	brcs	.-98     	; 0x290 <main+0x6>
-			{
-				// blink when shutdown is immanent
-				for (byte b = 0; b < 5; b++) blip();
- 2f2:	c4 df       	rcall	.-120    	; 0x27c <blip>
- 2f4:	c3 df       	rcall	.-122    	; 0x27c <blip>
- 2f6:	c2 df       	rcall	.-124    	; 0x27c <blip>
- 2f8:	c1 df       	rcall	.-126    	; 0x27c <blip>
- 2fa:	c0 df       	rcall	.-128    	; 0x27c <blip>
-				shutdown_chip();
- 2fc:	e6 de       	rcall	.-564    	; 0xca <shutdown_chip>
- 2fe:	c8 cf       	rjmp	.-112    	; 0x290 <main+0x6>
+000003d2 <_exit>:
+ 3d2:	f8 94       	cli
 
-00000300 <_exit>:
- 300:	f8 94       	cli
-
-00000302 <__stop_program>:
- 302:	ff cf       	rjmp	.-2      	; 0x302 <__stop_program>
+000003d4 <__stop_program>:
+ 3d4:	ff cf       	rjmp	.-2      	; 0x3d4 <__stop_program>
