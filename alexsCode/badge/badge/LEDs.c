@@ -37,14 +37,14 @@ void charlie (byte var)
 {
 	//if (var>11) return;
 	leds_off();
-	nop();
+	//nop();
 	//PORTB=0;
-	if (var<12)
+	//if (var<12)
 	{
 		PORTB|=portMasks[var][1];
 		DDRB=portMasks[var][0];
 	}
-	nop();
+	//nop();
 }
 
 

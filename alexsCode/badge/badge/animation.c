@@ -14,11 +14,12 @@ volatile uint16_t charlieBuffer=0;
 volatile uint8_t charlieCOunt=0;
 #define  charlieCountMAX  11
 
-volatile uint8_t animationCounter;
+volatile int8_t animationCounter;
 volatile uint8_t animationCOunterMAX;
 const __flash uint16_t *animationData;
 volatile uint8_t subDiV=0;
 volatile uint8_t  subDivMAX=50;
+volatile uint8_t subdivFirst=255;
 #define  subDivMAX_NORMAL 50
 #define  subDivMAX_FAST 25
 
@@ -32,6 +33,8 @@ static volatile uint8_t butEventFlag=0;
 static uint8_t butDownCounter=07;
 #define  butDownCounterMAX 200
 volatile uint8_t sleep_flag=1;
+
+const uint16_t charlieDispNumber[8]={0b1, 0b11, 0b111, 0b1111, 0b11111, 0b111111,  0b1111111, 0b11111111};
 
 void animation_init(void)
 {
@@ -56,29 +59,48 @@ void animation_select(uint8_t animationNum)
 	leds_off();
 	animationCounter=0;
 	charlieCOunt=0;
-	subDivMAX=subDivMAX_NORMAL;
+	subDiV=0;
+	//subDivMAX=subDivMAX_NORMAL;
+	//OCR0A=100;
+	
+	//if (animationNum<8)
+	//	charlieBuffer=0b111; //charlieDispNumber[animationNum];
 	
 	switch(animationNum)
 	{
 		case 4: subDivMAX=subDivMAX_FAST;
+				//charlieBuffer=0x11111;
 		case 0:	animationCOunterMAX=alexsTestAnimation_length;
 				animationData=&alexsTest[0];
+				//charlieBuffer|=0x1;
 				break;
 		case 5: subDivMAX=subDivMAX_FAST;
+				//charlieBuffer=0x111111;
 		case 1: animationCOunterMAX=updown_length;
 				animationData=&updown[0];
+				//harlieBuffer|=0x11;
 				break;
 		case 6: subDivMAX=subDivMAX_FAST;
+				//charlieBuffer=0x1111111;
 		case 2:	animationCOunterMAX=three_apart_length;
 				animationData=&three_apart[0];
+				//charlieBuffer|=0x111;
 				break;
 		case 7: subDivMAX=subDivMAX_FAST;
+				//charlieBuffer=0x11111111;
 		case 3: animationCOunterMAX=two_apart_length;
 				animationData=&two_apart[0];
-				break;	
+				//charlieBuffer|=0x1111;
+				break;			
 	}
+	//charlieBuffer=0;
+	//for (uint8_t i=0; i<animationNum; i++)
+	//	charlieBuffer|=(1<<i);
 	
 	charlieBuffer=animationData[0];
+	subdivFirst=255;
+	
+	//animationData[0];
 	leds_enabled=1;
 	
 }
@@ -104,15 +126,18 @@ ISR(TIM0_COMPA_vect)
 		{
 			subDiV++;
 			charlieCOunt=0;
-			if (subDiV>subDivMAX)
+			if (subDiV>=subdivFirst)
 			{
+				subdivFirst=subDivMAX;
 				subDiV=0;
+				//OCR0A = 1;
 				animationCounter++;
 				if (animationCounter>=animationCOunterMAX)
 				{
-					animationCounter=0;
+					animationCounter=1;
 					
 				}
+				//charlieBuffer=animationData[animationCounter];
 			}
 			charlieBuffer=animationData[animationCounter];
 		}

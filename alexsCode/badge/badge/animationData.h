@@ -13,8 +13,9 @@
 
 // animation where every third LED is glowing
 // I could shift that continuosly and drop 4 bytes
-#define three_apart_length  3
+#define three_apart_length  4
 const __flash uint16_t three_apart[three_apart_length]  = {
+	0b0000000000000001,
 	0b0000100100100100,
 	0b0000010010010010,
 	0b0000001001001001,
@@ -22,8 +23,9 @@ const __flash uint16_t three_apart[three_apart_length]  = {
 
 // this one is huge
 // is there a math function to do that instead?
-#define updown_length  7
+#define updown_length  8
 const __flash uint16_t updown[updown_length]  = {
+	0b0000000000000011,
 	0b0000000000100000,
 	0b0000000001010000,
 	0b0000000010001000,
@@ -33,8 +35,9 @@ const __flash uint16_t updown[updown_length]  = {
 	0b0000100000000000,
 };
 
-#define alexsTestAnimation_length 12
+#define alexsTestAnimation_length 13
 const __flash uint16_t  alexsTest[alexsTestAnimation_length] = {
+	0b0000000000000111,
 	0b0000000000000001,
 	0b0000000000000010,
 	0b0000000000000100,
@@ -50,8 +53,9 @@ const __flash uint16_t  alexsTest[alexsTestAnimation_length] = {
 
 // that's just blinking each led
 // maybe inverting the data bitwise does the trick
-#define two_apart_length  2
+#define two_apart_length  3
 const __flash uint16_t two_apart[two_apart_length]  = {
+	0b0000000000001111,
 	0b0000101010101010,
 	0b0000010101010101,
 };
