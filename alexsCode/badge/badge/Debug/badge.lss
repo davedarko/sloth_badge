@@ -3,54 +3,54 @@ badge.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000003ea  00000000  00000000  00000094  2**1
+  0 .text         000003f0  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000006  00800060  000003ea  0000047e  2**0
+  1 .data         00000006  00800060  000003f0  00000484  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          0000000c  00800066  00800066  00000484  2**0
+  2 .bss          0000000c  00800066  00800066  0000048a  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000484  2**0
+  3 .comment      00000030  00000000  00000000  0000048a  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004b4  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004bc  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000098  00000000  00000000  000004f0  2**0
+  5 .debug_aranges 00000098  00000000  00000000  000004f8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000008b6  00000000  00000000  00000588  2**0
+  6 .debug_info   000008b6  00000000  00000000  00000590  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000005bf  00000000  00000000  00000e3e  2**0
+  7 .debug_abbrev 000005bf  00000000  00000000  00000e46  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000612  00000000  00000000  000013fd  2**0
+  8 .debug_line   00000618  00000000  00000000  00001405  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000144  00000000  00000000  00001a10  2**2
+  9 .debug_frame  00000144  00000000  00000000  00001a20  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000003f0  00000000  00000000  00001b54  2**0
+ 10 .debug_str    000003f0  00000000  00000000  00001b64  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000001e5  00000000  00000000  00001f44  2**0
+ 11 .debug_loc    000001e5  00000000  00000000  00001f54  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000068  00000000  00000000  00002129  2**0
+ 12 .debug_ranges 00000068  00000000  00000000  00002139  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	39 c0       	rjmp	.+114    	; 0x74 <__ctors_end>
-   2:	9f c1       	rjmp	.+830    	; 0x342 <__vector_1>
+   2:	a2 c1       	rjmp	.+836    	; 0x348 <__vector_1>
    4:	50 c0       	rjmp	.+160    	; 0xa6 <__bad_interrupt>
    6:	4f c0       	rjmp	.+158    	; 0xa6 <__bad_interrupt>
    8:	4e c0       	rjmp	.+156    	; 0xa6 <__bad_interrupt>
    a:	4d c0       	rjmp	.+154    	; 0xa6 <__bad_interrupt>
-   c:	c9 c0       	rjmp	.+402    	; 0x1a0 <__vector_6>
+   c:	cc c0       	rjmp	.+408    	; 0x1a6 <__vector_6>
    e:	4b c0       	rjmp	.+150    	; 0xa6 <__bad_interrupt>
   10:	4a c0       	rjmp	.+148    	; 0xa6 <__bad_interrupt>
   12:	49 c0       	rjmp	.+146    	; 0xa6 <__bad_interrupt>
-  14:	7e c0       	rjmp	.+252    	; 0x112 <animation_select+0x2e>
-  16:	8a c0       	rjmp	.+276    	; 0x12c <animation_select+0x48>
-  18:	96 c0       	rjmp	.+300    	; 0x146 <animation_select+0x62>
-  1a:	a2 c0       	rjmp	.+324    	; 0x160 <animation_select+0x7c>
-  1c:	77 c0       	rjmp	.+238    	; 0x10c <animation_select+0x28>
-  1e:	83 c0       	rjmp	.+262    	; 0x126 <animation_select+0x42>
-  20:	8f c0       	rjmp	.+286    	; 0x140 <animation_select+0x5c>
-  22:	9b c0       	rjmp	.+310    	; 0x15a <animation_select+0x76>
+  14:	81 c0       	rjmp	.+258    	; 0x118 <animation_select+0x34>
+  16:	8d c0       	rjmp	.+282    	; 0x132 <animation_select+0x4e>
+  18:	99 c0       	rjmp	.+306    	; 0x14c <animation_select+0x68>
+  1a:	a5 c0       	rjmp	.+330    	; 0x166 <animation_select+0x82>
+  1c:	7a c0       	rjmp	.+244    	; 0x112 <animation_select+0x2e>
+  1e:	86 c0       	rjmp	.+268    	; 0x12c <animation_select+0x48>
+  20:	92 c0       	rjmp	.+292    	; 0x146 <animation_select+0x62>
+  22:	9e c0       	rjmp	.+316    	; 0x160 <animation_select+0x7c>
 
 00000024 <__trampolines_end>:
   24:	0f 00       	.word	0x000f	; ????
@@ -81,7 +81,7 @@ Disassembly of section .text:
   7c:	10 e0       	ldi	r17, 0x00	; 0
   7e:	a0 e6       	ldi	r26, 0x60	; 96
   80:	b0 e0       	ldi	r27, 0x00	; 0
-  82:	ea ee       	ldi	r30, 0xEA	; 234
+  82:	e0 ef       	ldi	r30, 0xF0	; 240
   84:	f3 e0       	ldi	r31, 0x03	; 3
   86:	02 c0       	rjmp	.+4      	; 0x8c <__do_copy_data+0x10>
   88:	05 90       	lpm	r0, Z+
@@ -103,8 +103,8 @@ Disassembly of section .text:
   9c:	a2 37       	cpi	r26, 0x72	; 114
   9e:	b2 07       	cpc	r27, r18
   a0:	e1 f7       	brne	.-8      	; 0x9a <.do_clear_bss_loop>
-  a2:	82 d1       	rcall	.+772    	; 0x3a8 <main>
-  a4:	a0 c1       	rjmp	.+832    	; 0x3e6 <_exit>
+  a2:	85 d1       	rcall	.+778    	; 0x3ae <main>
+  a4:	a3 c1       	rjmp	.+838    	; 0x3ec <_exit>
 
 000000a6 <__bad_interrupt>:
   a6:	ac cf       	rjmp	.-168    	; 0x0 <__vectors>
@@ -160,532 +160,535 @@ void animation_select(uint8_t animationNum)
 	leds_enabled=0; 
   e8:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <leds_enabled>
 	leds_off();
-  ec:	0e d1       	rcall	.+540    	; 0x30a <leds_off>
+  ec:	11 d1       	rcall	.+546    	; 0x310 <leds_off>
 	animationCounter=0;
   ee:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <animationCounter>
 	charlieCOunt=0;
   f2:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <charlieCOunt>
 	subDiV=0;
   f6:	10 92 69 00 	sts	0x0069, r1	; 0x800069 <subDiV>
+	subDivMAX=subDivMAX_NORMAL;
+  fa:	82 e3       	ldi	r24, 0x32	; 50
+  fc:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
 	//OCR0A=100;
 	
 	//if (animationNum<8)
 	//	charlieBuffer=0b111; //charlieDispNumber[animationNum];
 	
 	switch(animationNum)
-  fa:	8c 2f       	mov	r24, r28
-  fc:	90 e0       	ldi	r25, 0x00	; 0
-  fe:	88 30       	cpi	r24, 0x08	; 8
- 100:	91 05       	cpc	r25, r1
- 102:	b8 f5       	brcc	.+110    	; 0x172 <animation_select+0x8e>
- 104:	fc 01       	movw	r30, r24
- 106:	e6 5f       	subi	r30, 0xF6	; 246
- 108:	ff 4f       	sbci	r31, 0xFF	; 255
- 10a:	09 94       	ijmp
+ 100:	8c 2f       	mov	r24, r28
+ 102:	90 e0       	ldi	r25, 0x00	; 0
+ 104:	88 30       	cpi	r24, 0x08	; 8
+ 106:	91 05       	cpc	r25, r1
+ 108:	b8 f5       	brcc	.+110    	; 0x178 <animation_select+0x94>
+ 10a:	fc 01       	movw	r30, r24
+ 10c:	e6 5f       	subi	r30, 0xF6	; 246
+ 10e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 110:	09 94       	ijmp
 	{
 		case 4: subDivMAX=subDivMAX_FAST;
- 10c:	89 e1       	ldi	r24, 0x19	; 25
- 10e:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
+ 112:	82 e1       	ldi	r24, 0x12	; 18
+ 114:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
 				//charlieBuffer=0x11111;
 		case 0:	animationCOunterMAX=alexsTestAnimation_length;
- 112:	8d e0       	ldi	r24, 0x0D	; 13
- 114:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
+ 118:	8d e0       	ldi	r24, 0x0D	; 13
+ 11a:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
 				animationData=&alexsTest[0];
- 118:	8a e2       	ldi	r24, 0x2A	; 42
- 11a:	90 e0       	ldi	r25, 0x00	; 0
- 11c:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
- 120:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
+ 11e:	8a e2       	ldi	r24, 0x2A	; 42
+ 120:	90 e0       	ldi	r25, 0x00	; 0
+ 122:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
+ 126:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
 				//charlieBuffer|=0x1;
 				break;
- 124:	26 c0       	rjmp	.+76     	; 0x172 <animation_select+0x8e>
+ 12a:	26 c0       	rjmp	.+76     	; 0x178 <animation_select+0x94>
 		case 5: subDivMAX=subDivMAX_FAST;
- 126:	89 e1       	ldi	r24, 0x19	; 25
- 128:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
+ 12c:	82 e1       	ldi	r24, 0x12	; 18
+ 12e:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
 				//charlieBuffer=0x111111;
 		case 1: animationCOunterMAX=updown_length;
- 12c:	88 e0       	ldi	r24, 0x08	; 8
- 12e:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
+ 132:	88 e0       	ldi	r24, 0x08	; 8
+ 134:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
 				animationData=&updown[0];
- 132:	84 e4       	ldi	r24, 0x44	; 68
- 134:	90 e0       	ldi	r25, 0x00	; 0
- 136:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
- 13a:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
+ 138:	84 e4       	ldi	r24, 0x44	; 68
+ 13a:	90 e0       	ldi	r25, 0x00	; 0
+ 13c:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
+ 140:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
 				//harlieBuffer|=0x11;
 				break;
- 13e:	19 c0       	rjmp	.+50     	; 0x172 <animation_select+0x8e>
+ 144:	19 c0       	rjmp	.+50     	; 0x178 <animation_select+0x94>
 		case 6: subDivMAX=subDivMAX_FAST;
- 140:	89 e1       	ldi	r24, 0x19	; 25
- 142:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
+ 146:	82 e1       	ldi	r24, 0x12	; 18
+ 148:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
 				//charlieBuffer=0x1111111;
 		case 2:	animationCOunterMAX=three_apart_length;
- 146:	84 e0       	ldi	r24, 0x04	; 4
- 148:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
+ 14c:	84 e0       	ldi	r24, 0x04	; 4
+ 14e:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
 				animationData=&three_apart[0];
- 14c:	84 e5       	ldi	r24, 0x54	; 84
- 14e:	90 e0       	ldi	r25, 0x00	; 0
- 150:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
- 154:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
+ 152:	84 e5       	ldi	r24, 0x54	; 84
+ 154:	90 e0       	ldi	r25, 0x00	; 0
+ 156:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
+ 15a:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
 				//charlieBuffer|=0x111;
 				break;
- 158:	0c c0       	rjmp	.+24     	; 0x172 <animation_select+0x8e>
+ 15e:	0c c0       	rjmp	.+24     	; 0x178 <animation_select+0x94>
 		case 7: subDivMAX=subDivMAX_FAST;
- 15a:	89 e1       	ldi	r24, 0x19	; 25
- 15c:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
+ 160:	82 e1       	ldi	r24, 0x12	; 18
+ 162:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <subDivMAX>
 				//charlieBuffer=0x11111111;
 		case 3: animationCOunterMAX=two_apart_length;
- 160:	83 e0       	ldi	r24, 0x03	; 3
- 162:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
+ 166:	83 e0       	ldi	r24, 0x03	; 3
+ 168:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <animationCOunterMAX>
 				animationData=&two_apart[0];
- 166:	84 e2       	ldi	r24, 0x24	; 36
- 168:	90 e0       	ldi	r25, 0x00	; 0
- 16a:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
- 16e:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
+ 16c:	84 e2       	ldi	r24, 0x24	; 36
+ 16e:	90 e0       	ldi	r25, 0x00	; 0
+ 170:	90 93 71 00 	sts	0x0071, r25	; 0x800071 <animationData+0x1>
+ 174:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <animationData>
 	}
 	//charlieBuffer=0;
 	//for (uint8_t i=0; i<animationNum; i++)
 	//	charlieBuffer|=(1<<i);
 	
 	charlieBuffer=animationData[0];
- 172:	e0 91 70 00 	lds	r30, 0x0070	; 0x800070 <animationData>
- 176:	f0 91 71 00 	lds	r31, 0x0071	; 0x800071 <animationData+0x1>
- 17a:	85 91       	lpm	r24, Z+
- 17c:	95 91       	lpm	r25, Z+
- 17e:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
- 182:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
+ 178:	e0 91 70 00 	lds	r30, 0x0070	; 0x800070 <animationData>
+ 17c:	f0 91 71 00 	lds	r31, 0x0071	; 0x800071 <animationData+0x1>
+ 180:	85 91       	lpm	r24, Z+
+ 182:	95 91       	lpm	r25, Z+
+ 184:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
+ 188:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
 	subdivFirst=255;
- 186:	8f ef       	ldi	r24, 0xFF	; 255
- 188:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subdivFirst>
+ 18c:	8f ef       	ldi	r24, 0xFF	; 255
+ 18e:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subdivFirst>
 	
 	//animationData[0];
 	leds_enabled=1;
- 18c:	81 e0       	ldi	r24, 0x01	; 1
- 18e:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <leds_enabled>
+ 192:	81 e0       	ldi	r24, 0x01	; 1
+ 194:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <leds_enabled>
 	
 }
- 192:	cf 91       	pop	r28
- 194:	08 95       	ret
+ 198:	cf 91       	pop	r28
+ 19a:	08 95       	ret
 
-00000196 <isButFlag>:
+0000019c <isButFlag>:
 
 uint8_t isButFlag (void)
 {
 	uint8_t temp = butEventFlag;
- 196:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
+ 19c:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
 	butEventFlag = 0;
- 19a:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <__data_end>
+ 1a0:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <__data_end>
 	return temp;
 }
- 19e:	08 95       	ret
+ 1a4:	08 95       	ret
 
-000001a0 <__vector_6>:
+000001a6 <__vector_6>:
 
 ISR(TIM0_COMPA_vect)
 {
- 1a0:	1f 92       	push	r1
- 1a2:	0f 92       	push	r0
- 1a4:	0f b6       	in	r0, 0x3f	; 63
- 1a6:	0f 92       	push	r0
- 1a8:	11 24       	eor	r1, r1
- 1aa:	2f 93       	push	r18
- 1ac:	3f 93       	push	r19
- 1ae:	4f 93       	push	r20
- 1b0:	5f 93       	push	r21
- 1b2:	6f 93       	push	r22
- 1b4:	7f 93       	push	r23
- 1b6:	8f 93       	push	r24
- 1b8:	9f 93       	push	r25
- 1ba:	af 93       	push	r26
- 1bc:	bf 93       	push	r27
- 1be:	ef 93       	push	r30
- 1c0:	ff 93       	push	r31
+ 1a6:	1f 92       	push	r1
+ 1a8:	0f 92       	push	r0
+ 1aa:	0f b6       	in	r0, 0x3f	; 63
+ 1ac:	0f 92       	push	r0
+ 1ae:	11 24       	eor	r1, r1
+ 1b0:	2f 93       	push	r18
+ 1b2:	3f 93       	push	r19
+ 1b4:	4f 93       	push	r20
+ 1b6:	5f 93       	push	r21
+ 1b8:	6f 93       	push	r22
+ 1ba:	7f 93       	push	r23
+ 1bc:	8f 93       	push	r24
+ 1be:	9f 93       	push	r25
+ 1c0:	af 93       	push	r26
+ 1c2:	bf 93       	push	r27
+ 1c4:	ef 93       	push	r30
+ 1c6:	ff 93       	push	r31
 	if (leds_enabled)
- 1c2:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <leds_enabled>
- 1c6:	88 23       	and	r24, r24
- 1c8:	09 f4       	brne	.+2      	; 0x1cc <__vector_6+0x2c>
- 1ca:	55 c0       	rjmp	.+170    	; 0x276 <__vector_6+0xd6>
+ 1c8:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <leds_enabled>
+ 1cc:	88 23       	and	r24, r24
+ 1ce:	09 f4       	brne	.+2      	; 0x1d2 <__vector_6+0x2c>
+ 1d0:	55 c0       	rjmp	.+170    	; 0x27c <__vector_6+0xd6>
 	{
 		if (charlieBuffer&1)
- 1cc:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <charlieBuffer>
- 1d0:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <charlieBuffer+0x1>
- 1d4:	80 ff       	sbrs	r24, 0
- 1d6:	04 c0       	rjmp	.+8      	; 0x1e0 <__vector_6+0x40>
+ 1d2:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <charlieBuffer>
+ 1d6:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <charlieBuffer+0x1>
+ 1da:	80 ff       	sbrs	r24, 0
+ 1dc:	04 c0       	rjmp	.+8      	; 0x1e6 <__vector_6+0x40>
 		charlie(charlieCOunt);
- 1d8:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
- 1dc:	9b d0       	rcall	.+310    	; 0x314 <charlie>
- 1de:	02 c0       	rjmp	.+4      	; 0x1e4 <__vector_6+0x44>
+ 1de:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
+ 1e2:	9b d0       	rcall	.+310    	; 0x31a <charlie>
+ 1e4:	02 c0       	rjmp	.+4      	; 0x1ea <__vector_6+0x44>
 		else
 		charlie(255);
- 1e0:	8f ef       	ldi	r24, 0xFF	; 255
- 1e2:	98 d0       	rcall	.+304    	; 0x314 <charlie>
+ 1e6:	8f ef       	ldi	r24, 0xFF	; 255
+ 1e8:	98 d0       	rcall	.+304    	; 0x31a <charlie>
 		charlieCOunt++;
- 1e4:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
- 1e8:	8f 5f       	subi	r24, 0xFF	; 255
- 1ea:	80 93 6a 00 	sts	0x006A, r24	; 0x80006a <charlieCOunt>
+ 1ea:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
+ 1ee:	8f 5f       	subi	r24, 0xFF	; 255
+ 1f0:	80 93 6a 00 	sts	0x006A, r24	; 0x80006a <charlieCOunt>
 		charlieBuffer = charlieBuffer>>1;
- 1ee:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <charlieBuffer>
- 1f2:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <charlieBuffer+0x1>
- 1f6:	96 95       	lsr	r25
- 1f8:	87 95       	ror	r24
- 1fa:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
- 1fe:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
+ 1f4:	80 91 6b 00 	lds	r24, 0x006B	; 0x80006b <charlieBuffer>
+ 1f8:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <charlieBuffer+0x1>
+ 1fc:	96 95       	lsr	r25
+ 1fe:	87 95       	ror	r24
+ 200:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
+ 204:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
 		if (charlieCOunt>charlieCountMAX)
- 202:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
- 206:	8c 30       	cpi	r24, 0x0C	; 12
- 208:	b0 f1       	brcs	.+108    	; 0x276 <__vector_6+0xd6>
+ 208:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <charlieCOunt>
+ 20c:	8c 30       	cpi	r24, 0x0C	; 12
+ 20e:	b0 f1       	brcs	.+108    	; 0x27c <__vector_6+0xd6>
 		{
 			subDiV++;
- 20a:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <subDiV>
- 20e:	8f 5f       	subi	r24, 0xFF	; 255
- 210:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <subDiV>
+ 210:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <subDiV>
+ 214:	8f 5f       	subi	r24, 0xFF	; 255
+ 216:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <subDiV>
 			charlieCOunt=0;
- 214:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <charlieCOunt>
+ 21a:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <charlieCOunt>
 			if (subDiV>=subdivFirst)
- 218:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <subDiV>
- 21c:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <subdivFirst>
- 220:	98 17       	cp	r25, r24
- 222:	c8 f0       	brcs	.+50     	; 0x256 <__vector_6+0xb6>
+ 21e:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <subDiV>
+ 222:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <subdivFirst>
+ 226:	98 17       	cp	r25, r24
+ 228:	c8 f0       	brcs	.+50     	; 0x25c <__vector_6+0xb6>
 			{
 				subdivFirst=subDivMAX;
- 224:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <subDivMAX>
- 228:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subdivFirst>
+ 22a:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <subDivMAX>
+ 22e:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <subdivFirst>
 				subDiV=0;
- 22c:	10 92 69 00 	sts	0x0069, r1	; 0x800069 <subDiV>
+ 232:	10 92 69 00 	sts	0x0069, r1	; 0x800069 <subDiV>
 				//OCR0A = 1;
 				animationCounter++;
- 230:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <animationCounter>
- 234:	8f 5f       	subi	r24, 0xFF	; 255
- 236:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <animationCounter>
+ 236:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <animationCounter>
+ 23a:	8f 5f       	subi	r24, 0xFF	; 255
+ 23c:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <animationCounter>
 				if (animationCounter>=animationCOunterMAX)
- 23a:	20 91 6f 00 	lds	r18, 0x006F	; 0x80006f <animationCounter>
- 23e:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <animationCOunterMAX>
- 242:	02 2e       	mov	r0, r18
- 244:	00 0c       	add	r0, r0
- 246:	33 0b       	sbc	r19, r19
- 248:	90 e0       	ldi	r25, 0x00	; 0
- 24a:	28 17       	cp	r18, r24
- 24c:	39 07       	cpc	r19, r25
- 24e:	1c f0       	brlt	.+6      	; 0x256 <__vector_6+0xb6>
+ 240:	20 91 6f 00 	lds	r18, 0x006F	; 0x80006f <animationCounter>
+ 244:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <animationCOunterMAX>
+ 248:	02 2e       	mov	r0, r18
+ 24a:	00 0c       	add	r0, r0
+ 24c:	33 0b       	sbc	r19, r19
+ 24e:	90 e0       	ldi	r25, 0x00	; 0
+ 250:	28 17       	cp	r18, r24
+ 252:	39 07       	cpc	r19, r25
+ 254:	1c f0       	brlt	.+6      	; 0x25c <__vector_6+0xb6>
 				{
 					animationCounter=1;
- 250:	81 e0       	ldi	r24, 0x01	; 1
- 252:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <animationCounter>
+ 256:	81 e0       	ldi	r24, 0x01	; 1
+ 258:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <animationCounter>
 					
 				}
 				//charlieBuffer=animationData[animationCounter];
 			}
 			charlieBuffer=animationData[animationCounter];
- 256:	e0 91 6f 00 	lds	r30, 0x006F	; 0x80006f <animationCounter>
- 25a:	ee 0f       	add	r30, r30
- 25c:	ff 0b       	sbc	r31, r31
- 25e:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <animationData>
- 262:	90 91 71 00 	lds	r25, 0x0071	; 0x800071 <animationData+0x1>
- 266:	e8 0f       	add	r30, r24
- 268:	f9 1f       	adc	r31, r25
- 26a:	85 91       	lpm	r24, Z+
- 26c:	95 91       	lpm	r25, Z+
- 26e:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
- 272:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
+ 25c:	e0 91 6f 00 	lds	r30, 0x006F	; 0x80006f <animationCounter>
+ 260:	ee 0f       	add	r30, r30
+ 262:	ff 0b       	sbc	r31, r31
+ 264:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <animationData>
+ 268:	90 91 71 00 	lds	r25, 0x0071	; 0x800071 <animationData+0x1>
+ 26c:	e8 0f       	add	r30, r24
+ 26e:	f9 1f       	adc	r31, r25
+ 270:	85 91       	lpm	r24, Z+
+ 272:	95 91       	lpm	r25, Z+
+ 274:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <charlieBuffer+0x1>
+ 278:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <charlieBuffer>
 		}
 	}
 	
 	butDiv++;
- 276:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <butDiv>
- 27a:	8f 5f       	subi	r24, 0xFF	; 255
- 27c:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <butDiv>
+ 27c:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <butDiv>
+ 280:	8f 5f       	subi	r24, 0xFF	; 255
+ 282:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <butDiv>
 	if (butDiv>butDivMAX)
- 280:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <butDiv>
- 284:	86 30       	cpi	r24, 0x06	; 6
- 286:	80 f1       	brcs	.+96     	; 0x2e8 <__vector_6+0x148>
+ 286:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <butDiv>
+ 28a:	86 30       	cpi	r24, 0x06	; 6
+ 28c:	80 f1       	brcs	.+96     	; 0x2ee <__vector_6+0x148>
 	{
 		butDiv=0;
- 288:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <butDiv>
+ 28e:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <butDiv>
 		butState=(PINB & (1 << PB1));
- 28c:	86 b3       	in	r24, 0x16	; 22
- 28e:	82 70       	andi	r24, 0x02	; 2
- 290:	80 93 63 00 	sts	0x0063, r24	; 0x800063 <butState>
+ 292:	86 b3       	in	r24, 0x16	; 22
+ 294:	82 70       	andi	r24, 0x02	; 2
+ 296:	80 93 63 00 	sts	0x0063, r24	; 0x800063 <butState>
 		if (butState==0)
- 294:	81 11       	cpse	r24, r1
- 296:	09 c0       	rjmp	.+18     	; 0x2aa <__vector_6+0x10a>
+ 29a:	81 11       	cpse	r24, r1
+ 29c:	09 c0       	rjmp	.+18     	; 0x2b0 <__vector_6+0x10a>
 		{
 			butDownCounter++;
- 298:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <butDownCounter>
- 29c:	9f 5f       	subi	r25, 0xFF	; 255
+ 29e:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <butDownCounter>
+ 2a2:	9f 5f       	subi	r25, 0xFF	; 255
 			if (butDownCounter>254) butDownCounter=254;
- 29e:	9f 3f       	cpi	r25, 0xFF	; 255
- 2a0:	f1 f4       	brne	.+60     	; 0x2de <__vector_6+0x13e>
- 2a2:	9e ef       	ldi	r25, 0xFE	; 254
- 2a4:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <butDownCounter>
- 2a8:	1c c0       	rjmp	.+56     	; 0x2e2 <__vector_6+0x142>
+ 2a4:	9f 3f       	cpi	r25, 0xFF	; 255
+ 2a6:	f1 f4       	brne	.+60     	; 0x2e4 <__vector_6+0x13e>
+ 2a8:	9e ef       	ldi	r25, 0xFE	; 254
+ 2aa:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <butDownCounter>
+ 2ae:	1c c0       	rjmp	.+56     	; 0x2e8 <__vector_6+0x142>
 		}
 		if ((~oldButState) & butState)
- 2aa:	40 91 62 00 	lds	r20, 0x0062	; 0x800062 <oldButState>
- 2ae:	28 2f       	mov	r18, r24
- 2b0:	30 e0       	ldi	r19, 0x00	; 0
- 2b2:	50 e0       	ldi	r21, 0x00	; 0
- 2b4:	40 95       	com	r20
- 2b6:	50 95       	com	r21
- 2b8:	24 23       	and	r18, r20
- 2ba:	35 23       	and	r19, r21
- 2bc:	23 2b       	or	r18, r19
- 2be:	61 f0       	breq	.+24     	; 0x2d8 <__vector_6+0x138>
+ 2b0:	40 91 62 00 	lds	r20, 0x0062	; 0x800062 <oldButState>
+ 2b4:	28 2f       	mov	r18, r24
+ 2b6:	30 e0       	ldi	r19, 0x00	; 0
+ 2b8:	50 e0       	ldi	r21, 0x00	; 0
+ 2ba:	40 95       	com	r20
+ 2bc:	50 95       	com	r21
+ 2be:	24 23       	and	r18, r20
+ 2c0:	35 23       	and	r19, r21
+ 2c2:	23 2b       	or	r18, r19
+ 2c4:	61 f0       	breq	.+24     	; 0x2de <__vector_6+0x138>
 		{
 			if (butDownCounter>butDownCounterMAX) sleep_flag=1;
- 2c0:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <butDownCounter>
- 2c4:	99 3c       	cpi	r25, 0xC9	; 201
- 2c6:	18 f0       	brcs	.+6      	; 0x2ce <__vector_6+0x12e>
- 2c8:	91 e0       	ldi	r25, 0x01	; 1
- 2ca:	90 93 60 00 	sts	0x0060, r25	; 0x800060 <__data_start>
-			butEventFlag=1;
+ 2c6:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <butDownCounter>
+ 2ca:	99 3c       	cpi	r25, 0xC9	; 201
+ 2cc:	18 f0       	brcs	.+6      	; 0x2d4 <__vector_6+0x12e>
  2ce:	91 e0       	ldi	r25, 0x01	; 1
- 2d0:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <__data_end>
+ 2d0:	90 93 60 00 	sts	0x0060, r25	; 0x800060 <__data_start>
+			butEventFlag=1;
+ 2d4:	91 e0       	ldi	r25, 0x01	; 1
+ 2d6:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <__data_end>
 			butDownCounter=0;
- 2d4:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <butDownCounter>
+ 2da:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <butDownCounter>
 		}
 		oldButState=butState;
- 2d8:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <oldButState>
- 2dc:	05 c0       	rjmp	.+10     	; 0x2e8 <__vector_6+0x148>
+ 2de:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <oldButState>
+ 2e2:	05 c0       	rjmp	.+10     	; 0x2ee <__vector_6+0x148>
 	{
 		butDiv=0;
 		butState=(PINB & (1 << PB1));
 		if (butState==0)
 		{
 			butDownCounter++;
- 2de:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <butDownCounter>
+ 2e4:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <butDownCounter>
 			if (butDownCounter>254) butDownCounter=254;
 		}
 		if ((~oldButState) & butState)
- 2e2:	90 91 62 00 	lds	r25, 0x0062	; 0x800062 <oldButState>
- 2e6:	f8 cf       	rjmp	.-16     	; 0x2d8 <__vector_6+0x138>
+ 2e8:	90 91 62 00 	lds	r25, 0x0062	; 0x800062 <oldButState>
+ 2ec:	f8 cf       	rjmp	.-16     	; 0x2de <__vector_6+0x138>
 		}
 		oldButState=butState;
 		
 	}
 	
 }
- 2e8:	ff 91       	pop	r31
- 2ea:	ef 91       	pop	r30
- 2ec:	bf 91       	pop	r27
- 2ee:	af 91       	pop	r26
- 2f0:	9f 91       	pop	r25
- 2f2:	8f 91       	pop	r24
- 2f4:	7f 91       	pop	r23
- 2f6:	6f 91       	pop	r22
- 2f8:	5f 91       	pop	r21
- 2fa:	4f 91       	pop	r20
- 2fc:	3f 91       	pop	r19
- 2fe:	2f 91       	pop	r18
- 300:	0f 90       	pop	r0
- 302:	0f be       	out	0x3f, r0	; 63
- 304:	0f 90       	pop	r0
- 306:	1f 90       	pop	r1
- 308:	18 95       	reti
+ 2ee:	ff 91       	pop	r31
+ 2f0:	ef 91       	pop	r30
+ 2f2:	bf 91       	pop	r27
+ 2f4:	af 91       	pop	r26
+ 2f6:	9f 91       	pop	r25
+ 2f8:	8f 91       	pop	r24
+ 2fa:	7f 91       	pop	r23
+ 2fc:	6f 91       	pop	r22
+ 2fe:	5f 91       	pop	r21
+ 300:	4f 91       	pop	r20
+ 302:	3f 91       	pop	r19
+ 304:	2f 91       	pop	r18
+ 306:	0f 90       	pop	r0
+ 308:	0f be       	out	0x3f, r0	; 63
+ 30a:	0f 90       	pop	r0
+ 30c:	1f 90       	pop	r1
+ 30e:	18 95       	reti
 
-0000030a <leds_off>:
+00000310 <leds_off>:
 	
 	
 void leds_off()
 {
 	//DDRB &= ~(0b00011101);
 	PORTB &= ~(0b00011101);
- 30a:	88 b3       	in	r24, 0x18	; 24
- 30c:	82 7e       	andi	r24, 0xE2	; 226
- 30e:	88 bb       	out	0x18, r24	; 24
+ 310:	88 b3       	in	r24, 0x18	; 24
+ 312:	82 7e       	andi	r24, 0xE2	; 226
+ 314:	88 bb       	out	0x18, r24	; 24
 	DDRB=0;
- 310:	17 ba       	out	0x17, r1	; 23
- 312:	08 95       	ret
+ 316:	17 ba       	out	0x17, r1	; 23
+ 318:	08 95       	ret
 
-00000314 <charlie>:
+0000031a <charlie>:
 	//PORTB=0;
 }	
 
 void charlie (byte var) 
 {
- 314:	cf 93       	push	r28
- 316:	c8 2f       	mov	r28, r24
+ 31a:	cf 93       	push	r28
+ 31c:	c8 2f       	mov	r28, r24
 	//if (var>11) return;
 	leds_off();
- 318:	f8 df       	rcall	.-16     	; 0x30a <leds_off>
+ 31e:	f8 df       	rcall	.-16     	; 0x310 <leds_off>
 	//nop();
 	//PORTB=0;
 	//if (var<12)
 	{
 		PORTB|=portMasks[var][1];
- 31a:	98 b3       	in	r25, 0x18	; 24
- 31c:	ec 2f       	mov	r30, r28
- 31e:	f0 e0       	ldi	r31, 0x00	; 0
- 320:	ee 0f       	add	r30, r30
- 322:	ff 1f       	adc	r31, r31
- 324:	af 01       	movw	r20, r30
- 326:	44 5a       	subi	r20, 0xA4	; 164
- 328:	5f 4f       	sbci	r21, 0xFF	; 255
- 32a:	9a 01       	movw	r18, r20
- 32c:	2f 5f       	subi	r18, 0xFF	; 255
- 32e:	3f 4f       	sbci	r19, 0xFF	; 255
- 330:	f9 01       	movw	r30, r18
- 332:	84 91       	lpm	r24, Z
- 334:	89 2b       	or	r24, r25
- 336:	88 bb       	out	0x18, r24	; 24
+ 320:	98 b3       	in	r25, 0x18	; 24
+ 322:	ec 2f       	mov	r30, r28
+ 324:	f0 e0       	ldi	r31, 0x00	; 0
+ 326:	ee 0f       	add	r30, r30
+ 328:	ff 1f       	adc	r31, r31
+ 32a:	af 01       	movw	r20, r30
+ 32c:	44 5a       	subi	r20, 0xA4	; 164
+ 32e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 330:	9a 01       	movw	r18, r20
+ 332:	2f 5f       	subi	r18, 0xFF	; 255
+ 334:	3f 4f       	sbci	r19, 0xFF	; 255
+ 336:	f9 01       	movw	r30, r18
+ 338:	84 91       	lpm	r24, Z
+ 33a:	89 2b       	or	r24, r25
+ 33c:	88 bb       	out	0x18, r24	; 24
 		DDRB=portMasks[var][0];
- 338:	fa 01       	movw	r30, r20
- 33a:	84 91       	lpm	r24, Z
- 33c:	87 bb       	out	0x17, r24	; 23
+ 33e:	fa 01       	movw	r30, r20
+ 340:	84 91       	lpm	r24, Z
+ 342:	87 bb       	out	0x17, r24	; 23
 	}
 	//nop();
 }
- 33e:	cf 91       	pop	r28
- 340:	08 95       	ret
+ 344:	cf 91       	pop	r28
+ 346:	08 95       	ret
 
-00000342 <__vector_1>:
+00000348 <__vector_1>:
 // prototypes
 void shutdown_chip(void);
 void blip(void);
 
 // should have taken a switch, sleep stuff is huge
 ISR(INT0_vect) {
- 342:	1f 92       	push	r1
- 344:	0f 92       	push	r0
- 346:	0f b6       	in	r0, 0x3f	; 63
- 348:	0f 92       	push	r0
- 34a:	11 24       	eor	r1, r1
- 34c:	8f 93       	push	r24
+ 348:	1f 92       	push	r1
+ 34a:	0f 92       	push	r0
+ 34c:	0f b6       	in	r0, 0x3f	; 63
+ 34e:	0f 92       	push	r0
+ 350:	11 24       	eor	r1, r1
+ 352:	8f 93       	push	r24
 	sleep_disable();
- 34e:	85 b7       	in	r24, 0x35	; 53
- 350:	8f 7d       	andi	r24, 0xDF	; 223
- 352:	85 bf       	out	0x35, r24	; 53
+ 354:	85 b7       	in	r24, 0x35	; 53
+ 356:	8f 7d       	andi	r24, 0xDF	; 223
+ 358:	85 bf       	out	0x35, r24	; 53
 	
 	
 	GIMSK &= ~(1 << INT0);
- 354:	8b b7       	in	r24, 0x3b	; 59
- 356:	8f 7b       	andi	r24, 0xBF	; 191
- 358:	8b bf       	out	0x3b, r24	; 59
-	GIMSK &= ~(1 << PCIE);
  35a:	8b b7       	in	r24, 0x3b	; 59
- 35c:	8f 7d       	andi	r24, 0xDF	; 223
+ 35c:	8f 7b       	andi	r24, 0xBF	; 191
  35e:	8b bf       	out	0x3b, r24	; 59
+	GIMSK &= ~(1 << PCIE);
+ 360:	8b b7       	in	r24, 0x3b	; 59
+ 362:	8f 7d       	andi	r24, 0xDF	; 223
+ 364:	8b bf       	out	0x3b, r24	; 59
 	currentAnimation=0;
- 360:	10 92 6d 00 	sts	0x006D, r1	; 0x80006d <currentAnimation>
+ 366:	10 92 6d 00 	sts	0x006D, r1	; 0x80006d <currentAnimation>
 	
 }
- 364:	8f 91       	pop	r24
- 366:	0f 90       	pop	r0
- 368:	0f be       	out	0x3f, r0	; 63
- 36a:	0f 90       	pop	r0
- 36c:	1f 90       	pop	r1
- 36e:	18 95       	reti
+ 36a:	8f 91       	pop	r24
+ 36c:	0f 90       	pop	r0
+ 36e:	0f be       	out	0x3f, r0	; 63
+ 370:	0f 90       	pop	r0
+ 372:	1f 90       	pop	r1
+ 374:	18 95       	reti
 
-00000370 <shutdown_chip>:
+00000376 <shutdown_chip>:
 }
 
 void shutdown_chip()
 {
 	
 	leds_off();
- 370:	cc df       	rcall	.-104    	; 0x30a <leds_off>
+ 376:	cc df       	rcall	.-104    	; 0x310 <leds_off>
 
 	/* Clear WDRF in MCUSR */
 	MCUSR &= ~(1 << WDRF);
- 372:	84 b7       	in	r24, 0x34	; 52
- 374:	87 7f       	andi	r24, 0xF7	; 247
- 376:	84 bf       	out	0x34, r24	; 52
+ 378:	84 b7       	in	r24, 0x34	; 52
+ 37a:	87 7f       	andi	r24, 0xF7	; 247
+ 37c:	84 bf       	out	0x34, r24	; 52
 	/* Write logical one to WDCE and WDE */
 	/* Keep old prescaler setting to prevent unintentional time-out */
 	WDTCR |= (1 << WDCE) | (1 << WDE);
- 378:	81 b5       	in	r24, 0x21	; 33
- 37a:	88 61       	ori	r24, 0x18	; 24
- 37c:	81 bd       	out	0x21, r24	; 33
+ 37e:	81 b5       	in	r24, 0x21	; 33
+ 380:	88 61       	ori	r24, 0x18	; 24
+ 382:	81 bd       	out	0x21, r24	; 33
 	/* Turn off WDT */
 	WDTCR = 0x00;
- 37e:	11 bc       	out	0x21, r1	; 33
+ 384:	11 bc       	out	0x21, r1	; 33
 
 	ADCSRA &= ~(1 << ADEN); // turn off adc
- 380:	37 98       	cbi	0x06, 7	; 6
+ 386:	37 98       	cbi	0x06, 7	; 6
 
 	GIMSK |= (1 << INT0);
- 382:	8b b7       	in	r24, 0x3b	; 59
- 384:	80 64       	ori	r24, 0x40	; 64
- 386:	8b bf       	out	0x3b, r24	; 59
-	GIMSK |= (1 << PCIE);
  388:	8b b7       	in	r24, 0x3b	; 59
- 38a:	80 62       	ori	r24, 0x20	; 32
+ 38a:	80 64       	ori	r24, 0x40	; 64
  38c:	8b bf       	out	0x3b, r24	; 59
+	GIMSK |= (1 << PCIE);
+ 38e:	8b b7       	in	r24, 0x3b	; 59
+ 390:	80 62       	ori	r24, 0x20	; 32
+ 392:	8b bf       	out	0x3b, r24	; 59
 
 	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
- 38e:	85 b7       	in	r24, 0x35	; 53
- 390:	87 7e       	andi	r24, 0xE7	; 231
- 392:	80 61       	ori	r24, 0x10	; 16
- 394:	85 bf       	out	0x35, r24	; 53
-	sleep_enable();
- 396:	85 b7       	in	r24, 0x35	; 53
- 398:	80 62       	ori	r24, 0x20	; 32
+ 394:	85 b7       	in	r24, 0x35	; 53
+ 396:	87 7e       	andi	r24, 0xE7	; 231
+ 398:	80 61       	ori	r24, 0x10	; 16
  39a:	85 bf       	out	0x35, r24	; 53
+	sleep_enable();
+ 39c:	85 b7       	in	r24, 0x35	; 53
+ 39e:	80 62       	ori	r24, 0x20	; 32
+ 3a0:	85 bf       	out	0x35, r24	; 53
 	sei(); // Enable global interrupts
- 39c:	78 94       	sei
+ 3a2:	78 94       	sei
 	sleep_cpu();
- 39e:	88 95       	sleep
+ 3a4:	88 95       	sleep
 	sleep_disable();
- 3a0:	85 b7       	in	r24, 0x35	; 53
- 3a2:	8f 7d       	andi	r24, 0xDF	; 223
- 3a4:	85 bf       	out	0x35, r24	; 53
- 3a6:	08 95       	ret
+ 3a6:	85 b7       	in	r24, 0x35	; 53
+ 3a8:	8f 7d       	andi	r24, 0xDF	; 223
+ 3aa:	85 bf       	out	0x35, r24	; 53
+ 3ac:	08 95       	ret
 
-000003a8 <main>:
+000003ae <main>:
 
 int main(void)
 {
 	
     // this is for the button setup
     PORTB |= (1 << PB1);
- 3a8:	c1 9a       	sbi	0x18, 1	; 24
+ 3ae:	c1 9a       	sbi	0x18, 1	; 24
     DDRB &= ~(1 << PB1);
- 3aa:	b9 98       	cbi	0x17, 1	; 23
+ 3b0:	b9 98       	cbi	0x17, 1	; 23
 	
 	animation_init();
- 3ac:	7d de       	rcall	.-774    	; 0xa8 <animation_init>
+ 3b2:	7a de       	rcall	.-780    	; 0xa8 <animation_init>
 	animation_select(currentAnimation);
- 3ae:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
- 3b2:	98 de       	rcall	.-720    	; 0xe4 <animation_select>
+ 3b4:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
+ 3b8:	95 de       	rcall	.-726    	; 0xe4 <animation_select>
 	sei();
- 3b4:	78 94       	sei
+ 3ba:	78 94       	sei
 	while(1)
 	{
 		if (sleep_flag)
- 3b6:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__data_start>
- 3ba:	88 23       	and	r24, r24
- 3bc:	19 f0       	breq	.+6      	; 0x3c4 <main+0x1c>
+ 3bc:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__data_start>
+ 3c0:	88 23       	and	r24, r24
+ 3c2:	19 f0       	breq	.+6      	; 0x3ca <main+0x1c>
 		{
 			sleep_flag=0;
- 3be:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__data_start>
+ 3c4:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__data_start>
 			shutdown_chip();
- 3c2:	d6 df       	rcall	.-84     	; 0x370 <shutdown_chip>
+ 3c8:	d6 df       	rcall	.-84     	; 0x376 <shutdown_chip>
 		}
 		if (isButFlag())
- 3c4:	e8 de       	rcall	.-560    	; 0x196 <isButFlag>
- 3c6:	88 23       	and	r24, r24
- 3c8:	b1 f3       	breq	.-20     	; 0x3b6 <main+0xe>
+ 3ca:	e8 de       	rcall	.-560    	; 0x19c <isButFlag>
+ 3cc:	88 23       	and	r24, r24
+ 3ce:	b1 f3       	breq	.-20     	; 0x3bc <main+0xe>
 		{
 			currentAnimation++;
- 3ca:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
- 3ce:	8f 5f       	subi	r24, 0xFF	; 255
+ 3d0:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
+ 3d4:	8f 5f       	subi	r24, 0xFF	; 255
 			if (currentAnimation>7) currentAnimation=0;
- 3d0:	88 30       	cpi	r24, 0x08	; 8
- 3d2:	18 f4       	brcc	.+6      	; 0x3da <main+0x32>
+ 3d6:	88 30       	cpi	r24, 0x08	; 8
+ 3d8:	18 f4       	brcc	.+6      	; 0x3e0 <main+0x32>
 			sleep_flag=0;
 			shutdown_chip();
 		}
 		if (isButFlag())
 		{
 			currentAnimation++;
- 3d4:	80 93 6d 00 	sts	0x006D, r24	; 0x80006d <currentAnimation>
- 3d8:	02 c0       	rjmp	.+4      	; 0x3de <main+0x36>
+ 3da:	80 93 6d 00 	sts	0x006D, r24	; 0x80006d <currentAnimation>
+ 3de:	02 c0       	rjmp	.+4      	; 0x3e4 <main+0x36>
 			if (currentAnimation>7) currentAnimation=0;
- 3da:	10 92 6d 00 	sts	0x006D, r1	; 0x80006d <currentAnimation>
+ 3e0:	10 92 6d 00 	sts	0x006D, r1	; 0x80006d <currentAnimation>
 			animation_select(currentAnimation);
- 3de:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
- 3e2:	80 de       	rcall	.-768    	; 0xe4 <animation_select>
- 3e4:	e8 cf       	rjmp	.-48     	; 0x3b6 <main+0xe>
+ 3e4:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <currentAnimation>
+ 3e8:	7d de       	rcall	.-774    	; 0xe4 <animation_select>
+ 3ea:	e8 cf       	rjmp	.-48     	; 0x3bc <main+0xe>
 
-000003e6 <_exit>:
- 3e6:	f8 94       	cli
+000003ec <_exit>:
+ 3ec:	f8 94       	cli
 
-000003e8 <__stop_program>:
- 3e8:	ff cf       	rjmp	.-2      	; 0x3e8 <__stop_program>
+000003ee <__stop_program>:
+ 3ee:	ff cf       	rjmp	.-2      	; 0x3ee <__stop_program>

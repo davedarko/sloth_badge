@@ -21,7 +21,7 @@ volatile uint8_t subDiV=0;
 volatile uint8_t  subDivMAX=50;
 volatile uint8_t subdivFirst=255;
 #define  subDivMAX_NORMAL 50
-#define  subDivMAX_FAST 25
+#define  subDivMAX_FAST 18
 
 volatile uint8_t leds_enabled=0;
 
@@ -60,7 +60,7 @@ void animation_select(uint8_t animationNum)
 	animationCounter=0;
 	charlieCOunt=0;
 	subDiV=0;
-	//subDivMAX=subDivMAX_NORMAL;
+	subDivMAX=subDivMAX_NORMAL;
 	//OCR0A=100;
 	
 	//if (animationNum<8)
